@@ -1,5 +1,15 @@
 # Theorem 1.19
 
+$$(-1)^{2k} = ((-1)^2)^k = 1^k = 1$$
+
+$(2k)!$ has $2k$ terms, and can therefore be also written as
+$$(2k)! = (-1)(-2)\cdots(-2k + 1)(-2k)$$
+
+Now finally note that $-a \equiv p - a \mod p$, and the expression
+becomes $(p - 1)! \mod p$.
+
+## Wilson's Theorem
+
 Wilson's theorem in short:
 
 $\mathbb{Z}_p$ is a field so all $x \in \mathbb{Z}_p^* = \mathbb{Z}_p \setminus \{ 0 \}$ is a unit
