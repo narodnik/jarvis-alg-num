@@ -21,6 +21,29 @@ $\implies \bar{2} \cdot \overline{p - 2} = \bar{1}$
 
 See also Pinter, 23G.
 
+## Factorization of the Norm
+
+$$ N : \mathbb{Z}[i] \rightarrow \mathbb{Z}$$
+
+Since we have integer factorization in $\mathbb{Z}$, then we have $N(\alpha) \in \{ 1, p, p^2 \}$.
+
+| $N(\alpha)$ | $N(\beta)$ | $\alpha = a + ib$ | $\beta = c + id$ | $\alpha \beta$ |
+|-------------|------------|-------------------|------------------|----------------|
+| 1           | $p^2$      | 1                 | $p$              | $p$            |
+| 1           | $p^2$      | -1                | $-p$             | $p$            |
+| 1           | $p^2$      | $i$               | $-ip$            | $p$            |
+| 1           | $p^2$      | $-i$              | $ip$             | $p$            |
+| $p^2$       | 1          | $p$               | 1                | $p$            |
+| $p^2$       | 1          | $-p$              | -1               | $p$            |
+| $p^2$       | 1          | $-ip$             | $i$              | $p$            |
+| $p^2$       | 1          | $ip$              | $-i$             | $p$            |
+
+We are writing $p$ in an equivalent way using units with the norm function.
+
+We proved in the previous paragraph that $p$ is *not* prime. Since these factorizations
+above are just equivalent ways of representing $p$, that only leaves
+$N(\alpha) = N(\beta) = p$.
+
 # Lemma 1.28
 
 The only units in $\mathbb{Z}[i]$ are $\pm 1, \pm i$.
