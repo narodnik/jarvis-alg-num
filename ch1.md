@@ -52,9 +52,15 @@ distance less than $\frac{1}{\sqrt{2}}$.
 $N(x) = |x|^2$ are the same thing, except left is "norm" function and right is
 the "distance" function.
 
-# Lemma 1.28
+# Lemma 1.25
 
 The only units in $\mathbb{Z}[i]$ are $\pm 1, \pm i$.
+
+$\alpha \mid (1 + i)^2 \implies a = 1 + i$ or $\alpha = (1 + i)^2 \implies (1 + i) \mid \alpha$.
+
+$\alpha \mid y + i$ and $\alpha \mid y - i \implies \alpha \mid (y + i)(y - i) = x^3$
+but $(1 + i) \mid \alpha \implies (1 + i) \mid x^3$ and $(1 + i)$ is prime in $\mathbb{Z}[i]$
+so $(1 + i) \mid x$.
 
 # Selected Hints to Exercises
 
