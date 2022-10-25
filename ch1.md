@@ -44,7 +44,24 @@ We proved in the previous paragraph that $p$ is *not* prime. Since these factori
 above are just equivalent ways of representing $p$, that only leaves
 $N(\alpha) = N(\beta) = p$.
 
+# Lemma 1.20
+
+We are doing the equivalent of `round(a/b)`. The closest point in 2d will have
+distance less than $\frac{1}{\sqrt{2}}$.
+
+$N(x) = |x|^2$ are the same thing, except left is "norm" function and right is
+the "distance" function.
+
 # Lemma 1.28
 
 The only units in $\mathbb{Z}[i]$ are $\pm 1, \pm i$.
 
+# Selected Hints to Exercises
+
+## Ex 1.1
+
+$N \equiv a \mod m$ where $a$ is prime, means also $p \mid N \implies (p \mod m) \mid a$.
+
+## Ex 1.2
+
+Remember that $\phi(p) = p - 1$.
