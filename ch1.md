@@ -71,3 +71,9 @@ $N \equiv a \mod m$ where $a$ is prime, means also $p \mid N \implies (p \mod m)
 ## Ex 1.2
 
 Remember that $\phi(p) = p - 1$.
+
+## Ex 1.4
+
+$$ q \geq 1 \implies r_1 = q r_2 + r_3 > r_2 + r_3$$
+$$ r_2 > r_3 \implies r_1 > r_3 + r_3$$
+
