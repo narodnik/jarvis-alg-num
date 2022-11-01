@@ -77,3 +77,30 @@ Remember that $\phi(p) = p - 1$.
 $$ q \geq 1 \implies r_1 = q r_2 + r_3 > r_2 + r_3$$
 $$ r_2 > r_3 \implies r_1 > r_3 + r_3$$
 
+## Ex 1.9
+
+This question has a [notation error](https://math.stackexchange.com/questions/4566354/contradiction-for-primes-of-the-form-p-x2-2y2-implies-x2-equiv-2-mod).
+Let $s \equiv -2 \mod p$.
+
+```python
+sage: x, y, p, s, q
+(910833, 840626, 2242920897641, 141238812168, 8893939186)
+sage: s^2 + 2 == p*q
+True
+sage: N = lambda a, b: a^2 + 2*b^2
+sage: N(s, 1)*N(s, 1) == N(p, 0)*N(q, 0)
+True
+sage: N(x, y)
+2242920897641
+sage: N(x, -y)
+2242920897641
+sage: p
+2242920897641
+sage: N(x, y) == N(x, -y), N(x, y) == p
+(True, True)
+```
+
+The rest follows from the previous page. In short because
+$(s \pm \sqrt{-2})/p \notin \mathbb{Z}[\sqrt{-2}]$, we conclude
+that $N(\alpha) = N(\beta) = p$. So therefore $p$ can be
+factored inside $\mathbb{Z}[\sqrt{-2}]$.
