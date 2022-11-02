@@ -1,6 +1,6 @@
 ---
 header-includes: |
-    - \usepackage{tickz-cd}
+    - \usepackage{tikz-cd}
     - \DeclareMathOperator\ker{ker}
 ---
 
