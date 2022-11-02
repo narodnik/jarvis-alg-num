@@ -1,9 +1,3 @@
----
-header-includes: |
-    - \usepackage{tikz-cd}
-    - \DeclareMathOperator\ker{ker}
----
-
 # Theorem 1.19
 
 $$(-1)^{2k} = ((-1)^2)^k = 1^k = 1$$
@@ -151,11 +145,9 @@ sage: (x - y + z) - (x - 2*y) - y
 z
 ```
 
-```
 \begin{tikzcd}
 1 \arrow[r] & 3 \\
 2 \arrow[r] & 2 \\
 3 \arrow[r] & 1
 \end{tikzcd}
-```
 
