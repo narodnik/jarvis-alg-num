@@ -1,3 +1,9 @@
+---
+header-includes: |
+    - \usepackage{tickz-cd}
+    - \DeclareMathOperator\ker{ker}
+---
+
 # Theorem 1.19
 
 $$(-1)^{2k} = ((-1)^2)^k = 1^k = 1$$
@@ -104,3 +110,52 @@ The rest follows from the previous page. In short because
 $(s \pm \sqrt{-2})/p \notin \mathbb{Z}[\sqrt{-2}]$, we conclude
 that $N(\alpha) = N(\beta) = p$. So therefore $p$ can be
 factored inside $\mathbb{Z}[\sqrt{-2}]$.
+
+## Ex 1.13
+
+### 1
+
+Each normal involution has two elements from $S$ whereas the fixed ones $s = f(s)$.
+
+### 2
+
+First rewrite the relations for each case as:
+
+\begin{equation*}
+f(x, y, z) =
+    \begin{cases}
+        (x + 2z, z, y - x - z) & \text{if } 0 < y - x - z \\
+        (-(x - 2y), y, -(y - x - z)) & \text{if } y - x - z < 0 \text{ and } x - 2y < 0 \\
+        (x - 2y, x - y + z, y) & \text{if } 0 < x - 2y
+    \end{cases}
+\end{equation*}
+
+We can see that when #2 is false, then either #1 or #3 will be true. So each of the
+cases are exclusive.
+
+By looking at the relations we can also confirm that $f : S \rightarrow S$ where
+$(x, y, z) \in S \subset \mathbb{N}^3$.
+
+By testing each case like below we can see how they map onto each other.
+
+```python
+sage: z - (x + 2*z) - (y - x - z)
+-y
+sage: (2*y - x) - 2*y
+-x
+sage: y - (2*y - x) - (x - y + z)
+-z
+sage: (x - 2*y) - 2*(x - y + z)
+-x - 2*z
+sage: (x - y + z) - (x - 2*y) - y
+z
+```
+
+```
+\begin{tikzcd}
+1 \arrow[r] & 3 \\
+2 \arrow[r] & 2 \\
+3 \arrow[r] & 1
+\end{tikzcd}
+```
+
