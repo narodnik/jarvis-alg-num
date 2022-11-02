@@ -151,3 +151,18 @@ z
 3 \arrow[r] & 1
 \end{tikzcd}
 
+### 3
+
+Let $x = 1, y = 1, z = k$, then $p = x^2 + 4yz = 1 + 4k$ as desired.
+
+Then $y - x - z = -k < 0$ and $x - 2y = -1 < 0$ which means condition 2 is correct.
+
+Condition 2 is fixed.
+
+### 4
+
+Obvious
+
+### 5
+
+$y$ and $z$ are interchangable by previous answer so $p = x^2 + (2y)^2$ for some $y$.
