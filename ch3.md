@@ -201,3 +201,19 @@ $$\implies g(\gamma) \equiv f(\gamma) u(\gamma) \equiv 0 \mod 3$$
 
 $$g(X) = 3a(X) + f(X)u(X)$$
 
+# $\mathbb{Q}[\sqrt[3]{175}]$
+
+Note there's a mistake on the first page. $\alpha' = \alpha^2/5$. The book erroneously shows 7.
+
+```
+sage: K.<a> = NumberField(x^3 - 175)
+sage: L.<X> = K[]
+sage: K2.<w> = K.extension(X^2 + X + 1)
+sage: K3.<j, k> = K2[]
+sage: b = a^2/5
+sage: c1 = (j*a + k*b)/5
+sage: c2 = (j*a*w + k*b*w^2)/5
+sage: c3 = (j*a*w^2 + k*b*w)/5
+sage: c1*c2*c3
+7/5*j^3 + 49/25*k^3
+```
