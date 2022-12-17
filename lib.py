@@ -1,16 +1,11 @@
 import os
-
-unicode_table = {
-    "α": "\\alpha",
-    "ά": "{\\alpha'}",
-    "ω": "\\omega",
-}
+from IPython.core.completer import reverse_latex_symbol
 
 def asciify(latex):
     ascii_latex = ""
     for char in latex:
-        if char in unicode_table:
-            ascii_latex += unicode_table[char]
+        if char in reverse_latex_symbol:
+            ascii_latex += reverse_latex_symbol[char]
         else:
             ascii_latex += char
     return ascii_latex
