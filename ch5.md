@@ -38,3 +38,9 @@ $$\implies \mathfrak{p}_1 \cdots \mathfrak{p}_t \subseteq \mathfrak{b}_1 \mathfr
 \subseteq \mathfrak{a}$$
 Which is a contradiction.
 
+# $\mathfrak{a \subseteq b \implies b^{-1} \subseteq a^{-1}}$
+
+Let $\beta \in \mathfrak{b}^{-1}$
+$$\beta \mathfrak{b} \subseteq \mathbb{Z}_K$$
+but $\mathfrak{a \subseteq b} \implies \beta \mathfrak a \subseteq \mathbb Z_K$ and so
+$$\beta \in \mathfrak a^{-1}$$
