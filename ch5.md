@@ -28,7 +28,7 @@ $$𝔟_1 𝔟_2 = (𝖆 + 𝖆_1)(𝖆 + 𝖆_2)
 Since $𝖆_1 𝖆_2 ⊆ 𝖆$, so
 $𝔟_1 𝔟_2 ⊆ 𝖆$.
 But also observe that
-$$𝖆 \subsetneq 𝔟_1, 𝖆 \subsetneq 𝔟_2$$
+$$𝖆 ⊊ 𝔟_1, 𝖆 ⊊ 𝔟_2$$
 
 Since $𝔟_1, 𝔟_2$ are bigger than $𝖆$, then by $𝖆$'s maximality,
 there exist prime ideals $𝔭_i$ such that
