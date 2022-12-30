@@ -58,6 +58,20 @@ We want to show that $ri ∈ 𝔠$.
 
 But note that $r ∈ 𝖆^{-1}$, so $r β ∈ 𝖆^{-1} ⇒ ri = γ (r β) ∈ 𝔠$.
 
+```python
+sage: K.<a> = NumberField(x^2 + 5)
+sage: O = K.ring_of_integers()
+sage: I = O.ideal(1 + a)
+sage: (1 - a) * I
+Fractional ideal (6)
+sage: (1 - a)/6 * I
+Fractional ideal (1)
+sage: 1 - a in I^-1
+True
+sage: a in I^-1
+True
+```
+
 # Lemma 5.26
 
 ## $𝖆 ⊆ 𝔟 ⇒ 𝔟^{-1} ⊆ 𝖆^{-1}$
