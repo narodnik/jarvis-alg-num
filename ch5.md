@@ -72,6 +72,8 @@ sage: a in I^-1
 True
 sage: I.basis()
 [6, a + 1]
+sage: factor(I)
+(Fractional ideal (2, a + 1)) * (Fractional ideal (3, a + 1))
 ```
 
 # Lemma 5.26
