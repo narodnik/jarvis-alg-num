@@ -1,77 +1,70 @@
----
-header-includes: |
-    - \newcommand{\mf}{\mathfrak}
-    - \newcommand{\sseq}{\subseteq}
-    - \newcommand{\bb}{\mathbb}
----
-
 # Lemma 5.24
 
-$\mathfrak{a}$ is a non-zero ideal of $\mathbb{Z}_K$.
+$𝖆$ is a non-zero ideal of $ℤ_K$.
 
-$\mathbb{Z}_K$ is Noetherian.
-Since $\mathfrak{a}$ forms an ascending chain
-$\mathfrak{a} \subseteq \mathfrak{a}_1 \subseteq \mathfrak{a}_2 \subseteq \cdots$,
+$ℤ_K$ is Noetherian.
+Since $𝖆$ forms an ascending chain
+$𝖆 ⊆ 𝖆_1 ⊆ 𝖆_2 ⊆ ⋯$,
 it eventually terminates.
 
-There are no prime ideals $\mathfrak{p}_1 \cdots \mathfrak{p}_r \subseteq \mathfrak{a}$.
-The same is true for all ideals in the chain $\mathfrak{a}_i$.
+There are no prime ideals $𝔭_1 ⋯ 𝔭_r ⊆ 𝖆$.
+The same is true for all ideals in the chain $𝖆_i$.
 
-Lets take $\mathfrak{a}$ to be the largest ideal in the chain.
+Lets take $𝖆$ to be the largest ideal in the chain.
 
-$\mathfrak{a}$ is not prime otherwise $\mathfrak{p}_1 = \mathfrak{a} \subseteq \mathfrak{a}$
+$𝖆$ is not prime otherwise $𝔭_1 = 𝖆 ⊆ 𝖆$
 and the proof is finished.
 
-So there are ideals $\mathfrak{a}_1, \mathfrak{a}_2$ in $\mathbb{Z}_K$ such that
-$\mathfrak{a}_1 \mathfrak{a}_2 \subseteq \mathfrak{a},
-\mathfrak{a}_1 \not\subseteq \mathfrak{a},
-\mathfrak{a}_2 \not\subseteq \mathfrak{a}$
+So there are ideals $𝖆_1, 𝖆_2$ in $ℤ_K$ such that
+$𝖆_1 𝖆_2 ⊆ 𝖆,
+𝖆_1 \not\in 𝖆,
+𝖆_2 \not\in 𝖆$
 Write
-$$\mathfrak{b}_1 = \mathfrak{a} + \mathfrak{a}_1,
-\mathfrak{b}_2 = \mathfrak{a} + \mathfrak{a}_2$$
+$$𝔟_1 = 𝖆 + 𝖆_1,
+𝔟_2 = 𝖆 + 𝖆_2$$
 Then we can see that
-$$\mathfrak{b}_1 \mathfrak{b}_2 = (\mathfrak{a} + \mathfrak{a}_1)(\mathfrak{a} + \mathfrak{a}_2)
-= \mathfrak{a} + \mathfrak{a}_1 \mathfrak{a} + \mathfrak{a}_2 \mathfrak{a} + \mathfrak{a}_1 \mathfrak{a}_2$$
-Since $\mathfrak{a}_1 \mathfrak{a}_2 \subseteq \mathfrak{a}$, so
-$\mathfrak{b}_1 \mathfrak{b}_2 \subseteq \mathfrak{a}$.
+$$𝔟_1 𝔟_2 = (𝖆 + 𝖆_1)(𝖆 + 𝖆_2)
+= 𝖆 + 𝖆_1 𝖆 + 𝖆_2 𝖆 + 𝖆_1 𝖆_2$$
+Since $𝖆_1 𝖆_2 ⊆ 𝖆$, so
+$𝔟_1 𝔟_2 ⊆ 𝖆$.
 But also observe that
-$$\mathfrak{a} \subsetneq \mathfrak{b}_1, \mathfrak{a} \subsetneq \mathfrak{b}_2$$
+$$𝖆 \subsetneq 𝔟_1, 𝖆 \subsetneq 𝔟_2$$
 
-Since $\mathfrak{b}_1, \mathfrak{b}_2$ are bigger than $\mathfrak{a}$, then by $\mathfrak{a}$'s maximality,
-there exist prime ideals $\mathfrak{p}_i$ such that
-$$\mathfrak{p}_1 \cdots \mathfrak{p}_s \subseteq \mathfrak{b}_1$$
-$$\mathfrak{p}_{s+1} \cdots \mathfrak{p}_t \subseteq \mathfrak{b}_2$$
-$$\implies \mathfrak{p}_1 \cdots \mathfrak{p}_t \subseteq \mathfrak{b}_1 \mathfrak{b}_2
-\subseteq \mathfrak{a}$$
+Since $𝔟_1, 𝔟_2$ are bigger than $𝖆$, then by $𝖆$'s maximality,
+there exist prime ideals $𝔭_i$ such that
+$$𝔭_1 ⋯ 𝔭_s ⊆ 𝔟_1$$
+$$𝔭_{s+1} ⋯ 𝔭_t ⊆ 𝔟_2$$
+$$⇒ 𝔭_1 ⋯ 𝔭_t ⊆ 𝔟_1 𝔟_2
+⊆ 𝖆$$
 Which is a contradiction.
 
-# $\mathfrak{a \subseteq b \implies b^{-1} \subseteq a^{-1}}$
+# $\mathfrak{a ⊆ b ⇒ b^{-1} ⊆ a^{-1}}$
 
-Let $\beta \in \mathfrak{b}^{-1}$
-$$\beta \mathfrak{b} \subseteq \mathbb{Z}_K$$
-but $\mathfrak{a \subseteq b} \implies \beta \mathfrak a \subseteq \mathbb Z_K$ and so
-$$\beta \in \mathfrak a^{-1}$$
+Let $β ∈ 𝔟^{-1}$
+$$β 𝔟 ⊆ ℤ_K$$
+but $𝖆 ⊆ 𝔟 ⇒ β 𝖆 ⊆ ℤ_K$ and so
+$$β ∈ 𝖆^{-1}$$
 
 # Lemma 5.25
 
-$$\mathfrak a^{-1} = \{ \alpha \in K : \alpha \mathfrak a \subseteq \mathbb Z_K \}$$
-Let $\gamma \in \mathfrak a$ and $\mathfrak c = \gamma \mathfrak a^{-1}$.
-Take $i, i' \in \mathfrak c$, then $i = \gamma \beta, i' = \gamma \beta'$ with
-$\beta, \beta' \in \mathfrak a^{-1}$.
-$$(\beta + \beta') \mathfrak a = \beta \mathfrak a + \beta' \mathfrak a \subseteq (\mathbb Z_K + \mathbb Z_K) = \mathbb Z_K$$
+$$𝖆^{-1} = \{ α ∈ K : α 𝖆 ⊆ ℤ_K \}$$
+Let $γ ∈ 𝖆$ and $𝔠 = γ 𝖆^{-1}$.
+Take $i, i' ∈ 𝔠$, then $i = γ β, i' = γ β'$ with
+$β, β' ∈ 𝖆^{-1}$.
+$$(β + β') 𝖆 = β 𝖆 + β' 𝖆 ⊆ (ℤ_K + ℤ_K) = ℤ_K$$
 
-Let $i = \gamma \beta \in \mathfrak c$ with $\gamma \in \mathfrak a, \beta \in \mathfrak a^{-1}$ and $r \in \mathbb Z_K$.
-We want to show that $ri \in \mathfrak c$.
+Let $i = γ β ∈ 𝔠$ with $γ ∈ 𝖆, β ∈ 𝖆^{-1}$ and $r ∈ ℤ_K$.
+We want to show that $ri ∈ 𝔠$.
 
-But note that $r \in \mathfrak a^{-1}$, so $r \beta \in \mathfrak a^{-1} \implies ri = \gamma (r \beta) \in \mathfrak c$.
+But note that $r ∈ 𝖆^{-1}$, so $r β ∈ 𝖆^{-1} ⇒ ri = γ (r β) ∈ 𝔠$.
 
 # Lemma 5.26
 
-## $\mf a \sseq \mf b \implies \mf b^{-1} \sseq \mf a^{-1}$
+## $𝖆 ⊆ 𝔟 ⇒ 𝔟^{-1} ⊆ 𝖆^{-1}$
 
-Let $\beta \in \mf b^{-1}$, then $\beta \mf b \sseq \bb Z_K$.
+Let $β ∈ 𝔟^{-1}$, then $β 𝔟 ⊆ ℤ_K$.
 
-But $\mf a \sseq \mf b \implies \beta \mf a \sseq \bb Z_K$
+But $𝖆 ⊆ 𝔟 ⇒ β 𝖆 ⊆ ℤ_K$
 
-So $\beta \in \mf a^{-1}$.
+So $β ∈ 𝖆^{-1}$.
 
