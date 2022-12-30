@@ -70,6 +70,8 @@ sage: 1 - a in I^-1
 True
 sage: a in I^-1
 True
+sage: I.basis()
+[6, a + 1]
 ```
 
 # Lemma 5.26
