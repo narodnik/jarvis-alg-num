@@ -17,8 +17,8 @@ and the proof is finished.
 
 So there are ideals $𝖆_1, 𝖆_2$ in $ℤ_K$ such that
 $𝖆_1 𝖆_2 ⊆ 𝖆,
-𝖆_1 \not\in 𝖆,
-𝖆_2 \not\in 𝖆$
+𝖆_1 ∉ 𝖆,
+𝖆_2 ∉ 𝖆$
 Write
 $$𝔟_1 = 𝖆 + 𝖆_1,
 𝔟_2 = 𝖆 + 𝖆_2$$
