@@ -1,3 +1,10 @@
+---
+header-includes: |
+    - \newcommand{\mf}{\mathfrak}
+    - \newcommand{\sseq}{\subseteq}
+    - \newcommand{\bb}{\mathbb}
+---
+
 # Lemma 5.24
 
 $\mathfrak{a}$ is a non-zero ideal of $\mathbb{Z}_K$.
@@ -44,3 +51,27 @@ Let $\beta \in \mathfrak{b}^{-1}$
 $$\beta \mathfrak{b} \subseteq \mathbb{Z}_K$$
 but $\mathfrak{a \subseteq b} \implies \beta \mathfrak a \subseteq \mathbb Z_K$ and so
 $$\beta \in \mathfrak a^{-1}$$
+
+# Lemma 5.25
+
+$$\mathfrak a^{-1} = \{ \alpha \in K : \alpha \mathfrak a \subseteq \mathbb Z_K \}$$
+Let $\gamma \in \mathfrak a$ and $\mathfrak c = \gamma \mathfrak a^{-1}$.
+Take $i, i' \in \mathfrak c$, then $i = \gamma \beta, i' = \gamma \beta'$ with
+$\beta, \beta' \in \mathfrak a^{-1}$.
+$$(\beta + \beta') \mathfrak a = \beta \mathfrak a + \beta' \mathfrak a \subseteq (\mathbb Z_K + \mathbb Z_K) = \mathbb Z_K$$
+
+Let $i = \gamma \beta \in \mathfrak c$ with $\gamma \in \mathfrak a, \beta \in \mathfrak a^{-1}$ and $r \in \mathbb Z_K$.
+We want to show that $ri \in \mathfrak c$.
+
+But note that $r \in \mathfrak a^{-1}$, so $r \beta \in \mathfrak a^{-1} \implies ri = \gamma (r \beta) \in \mathfrak c$.
+
+# Lemma 5.26
+
+## $\mf a \sseq \mf b \implies \mf b^{-1} \sseq \mf a^{-1}$
+
+Let $\beta \in \mf b^{-1}$, then $\beta \mf b \sseq \bb Z_K$.
+
+But $\mf a \sseq \mf b \implies \beta \mf a \sseq \bb Z_K$
+
+So $\beta \in \mf a^{-1}$.
+
