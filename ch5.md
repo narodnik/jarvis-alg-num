@@ -86,3 +86,79 @@ But $𝖆 ⊆ 𝔟 ⇒ β 𝖆 ⊆ ℤ_K$
 
 So $β ∈ 𝖆^{-1}$.
 
+Section 4.6 shows $〈1 - \sqrt{-5}〉$ is not prime.
+
+```python
+sage: K.<a> = NumberField(x^2 + 5)
+sage: O = K.ring_of_integers()
+sage: I = O.ideal(1 + a)
+sage: (1 - a) * I
+Fractional ideal (6)
+sage: (1 - a)/6 * I
+Fractional ideal (1)
+sage: 1 - a in I^-1
+True
+sage: a in I^-1
+True
+sage: I.basis()
+[6, a + 1]
+sage: I.is_prime()
+False
+sage: I.is_maximal()
+False
+sage: I
+Fractional ideal (a + 1)
+sage: factor(I)
+(Fractional ideal (2, a + 1)) * (Fractional ideal (3, a + 1))
+sage: J = O.ideal(2, a + 1)
+sage: J.is_prime()
+True
+sage: 7 + a in J
+True
+sage: α = O.ideal(7 + a)
+sage: factor(α)
+(Fractional ideal (2, a + 1)) * (Fractional ideal (3, a + 1))^3
+sage: J.is_prime(), J.is_maximal()  # of course
+(True, True)
+sage: O.ideal(3 + a+ 1)^3
+Fractional ideal (43*a + 4)
+sage: β = (43*a + 4)*(10 + a) # choose any random value from the ideal
+sage: β in O.ideal(3 + a+ 1)^3
+True
+sage: β in α
+False
+sage: β*J
+Fractional ideal (277830, 7*a + 150115)
+sage: α
+Fractional ideal (a + 7)
+sage: 277830 in α
+True
+sage: 7*a + 150115 in α
+True
+sage: β*α^-1*J
+Fractional ideal (5145, 7*a + 910)
+sage: # which is a subset of Z_K
+sage: β*α^-1
+Fractional ideal (119/2*a + 35/2)
+sage: J
+Fractional ideal (2, a + 1)
+sage: (119/2*a + 35/2)*J
+Fractional ideal (5145, 7*a + 910)
+sage: # so therefore β*α^-1 is a subset of J^-1
+sage: J^-1
+Fractional ideal (1, 1/2*a + 1/2)
+sage: # we can see it consists of all odd halfs of a
+sage: # and any integer multiple of 1/2
+sage: # which β*α^-1 = <119/2*a + 35/2> is a member of
+sage: (a + 7)*O
+Fractional ideal (a + 7)
+sage: β
+434*a - 175
+sage: N.<a> = Integers(5)[]
+sage: N(a + 7)
+a + 2
+sage: N(434*a - 175)
+4*a
+sage: # so they are different
+```
+
