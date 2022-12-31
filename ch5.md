@@ -201,3 +201,12 @@ $$ ⇒ 𝔭^{-1}(𝖆𝔭^{-1}) ⊆ 𝖆^{-1}$$
 by the definition of a fractional ideal.
 $$ ⇒ 𝖆𝔭^{-1}(𝖆𝔭^{-1}) ⊆ 𝖆𝖆^{-1}$$
 
+# Lemma 5.31
+
+Every maximal ideal is prime.
+
+Let $𝖆$ be the biggest ideal not a product of primes.
+Then it is contained in $𝔭$ prime and so we can write.
+$$   𝖆 𝔭^{-1} =   𝔭_1 ⋯ 𝔭_r $$
+$$ ⇒ 𝖆        = 𝔭 𝔭_1 ⋯ 𝔭_r $$
+
