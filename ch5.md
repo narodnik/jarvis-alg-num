@@ -174,3 +174,30 @@ $$α^{-1} β ∈ 𝔭^{-1}$$
 But also $β ∉ 〈α〉$
 $$⇒ α^{-1} β ∉ ℤ_K$$
 
+# Lemma 5.28
+
+$𝔭^{-1}$ strictly contains $ℤ_K$, so there is a non-integer element $θ ∈ 𝔭^{-1}$,
+and $𝔭θ ⊈ 𝔭$. But $𝔭$ is maximal, so $𝔭𝔭^{-1} = ℤ_K$.
+
+# Lemma 5.29
+
+By the prev lemma, max ideals $𝔭𝔭^{-1} = ℤ_K$. So $𝖆$ is not maximal.
+
+## Derive identity
+
+$𝖆𝔭^{-1}$ is an ideal.
+$$𝖆 ⊆ 𝖆𝔭^{-1}$$
+but $∃θ ∈ 𝔭^{-1} : θ ∉ ℤ_K$ so $𝖆 ⊊ 𝖆𝔭^{-1}$.
+
+Since $𝖆𝔭^{-1}$ is an ideal, and $𝖆$ is the biggest such that
+$𝖆𝖆^{-1} = ℤ_K$ then
+$$𝖆𝔭^{-1}(𝖆𝔭^{-1}) = ℤ_K$$
+
+## Prove final statement
+
+$$𝖆𝔭^{-1}(𝖆𝔭^{-1}) = ℤ_K$$
+$$[𝔭^{-1}(𝖆𝔭^{-1})] · 𝖆 = ℤ_K$$
+$$ ⇒ 𝔭^{-1}(𝖆𝔭^{-1}) ⊆ 𝖆^{-1}$$
+by the definition of a fractional ideal.
+$$ ⇒ 𝖆𝔭^{-1}(𝖆𝔭^{-1}) ⊆ 𝖆𝖆^{-1}$$
+
