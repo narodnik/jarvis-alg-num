@@ -1,3 +1,40 @@
+# Ring Theory
+
+* Let $R$ be an integral domain and $p ∈ R$.
+  If $⟨p⟩$ is maximal then $p$ is irreducible.
+* $I$ is a maximal ideal $↔ R/I$ is a field.
+    * Let $a ∈ R - I$. Then $aR + I = R ⇒ 1 ∈ ab + I$ for some $b$.
+      So $(a + I)(b + I) = 1 + I$, and every $a ∉ I$ has an inverse.
+* Let $R$ be an integral domain and $p ∈ R$.
+  Then $⟨p⟩$ is prime $↔$ $p$ is prime.
+* Let $R$ be a ring. Then $I$ is prime $↔$ $R/I$ is an integral domain.
+    * $(a + I)(b + I) = I ⇒ a \text{ or } b ∈ I$
+* Maximal ideals are prime.
+* Finite integral domains are fields.
+
+# Lemma 5.20
+
+$ℤ_K/𝔭$ is finite.
+
+Let $𝔭$ be a non-zero prime ideal in $ℤ_K$. Let $α ∈ 𝔭, α ≠ 0$.
+Then $N(α) ∈ ℤ$ and $α | N(α) ⇒ N(α) ∈ 𝔭$.
+
+$ℤ_K$ has integral basis
+$$ℤ_K = ℤω_1 + ⋯ + ℤω_n$$
+Since $Nω_i ∈ 𝔭$ by the nature of ideals, then $a_i ω_i ≡ b_i ω_i \mod 𝔭$
+where $0 ≤ b_i < N$. It could be smaller but we have established an upper
+bound for $b_i$, so $ℤ_K/𝔭$ is finite.
+
+# Proposition 5.21
+
+$K$ is a number field. Every non-zero prime ideal $𝔭 ⊆ ℤ_K$ is maximal.
+
+Proof:
+* Prime ideal $𝔭 ⇒ ℤ_K/𝔭$ is an integral domain.
+* $ℤ_K/𝔭$ is finite (lemma 5.20).
+* Finite integral domain is a field.
+* $ℤ_K/𝔭$ is a field $⇒ 𝔭$ is a maximal ideal.
+
 # Lemma 5.24
 
 $𝖆$ is a non-zero ideal of $ℤ_K$.
@@ -86,7 +123,7 @@ But $𝖆 ⊆ 𝔟 ⇒ β 𝖆 ⊆ ℤ_K$
 
 So $β ∈ 𝖆^{-1}$.
 
-Section 4.6 shows $〈1 - \sqrt{-5}〉$ is not prime.
+Section 4.6 shows $⟨1 - \sqrt{-5}⟩$ is not prime.
 
 ```python
 sage: K.<a> = NumberField(x^2 + 5)
@@ -162,16 +199,16 @@ sage: N(434*a - 175)
 sage: # so they are different
 ```
 
-$$α ∈ 𝔭 ⇒ 〈α〉⊆ 𝔭$$
+$$α ∈ 𝔭 ⇒ ⟨α⟩⊆ 𝔭$$
 And there exists 
-$$𝔭_1 ⋯ 𝔭_r ⊆ 〈α〉$$
+$$𝔭_1 ⋯ 𝔭_r ⊆ ⟨α⟩$$
 but since $r$ is minimal
-$$𝔭_2 ⋯ 𝔭_r ⊈ 〈α〉$$
-Let $β ∈ 𝔭_2 ⋯ 𝔭_r$, then $β ∉ 〈α〉$.
-$$β𝔭 ⊆ 𝔭_1 ⋯ 𝔭_r \implies β𝔭 ⊆ 〈α〉$$
+$$𝔭_2 ⋯ 𝔭_r ⊈ ⟨α⟩$$
+Let $β ∈ 𝔭_2 ⋯ 𝔭_r$, then $β ∉ ⟨α⟩$.
+$$β𝔭 ⊆ 𝔭_1 ⋯ 𝔭_r \implies β𝔭 ⊆ ⟨α⟩$$
 $$α^{-1} β𝔭 ⊆ ℤ_K$$
 $$α^{-1} β ∈ 𝔭^{-1}$$
-But also $β ∉ 〈α〉$
+But also $β ∉ ⟨α⟩$
 $$⇒ α^{-1} β ∉ ℤ_K$$
 
 # Lemma 5.28
