@@ -306,3 +306,82 @@ $$
 The definition of norm from 3.2, is given as the determinant of
 that transform matrix.
 
+# Deconstructing Primes into Ideals
+
+## Double Quotienting Ideals Isomorphic to Sum of Ideals
+
+Observe the lattice when we collapse normal subgroups down to 0.
+
+$$ \frac{ ⟨p⟩ }{ ⟨g(X)⟩ } ⊆ \frac{ ℤ[X] }{ ⟨g(X)⟩ } ⇔ ⟨p⟩ ⊆ ℤ[X] $$
+
+$$ ϕ : ℤ[X] / ⟨g(X)⟩ → ℤ[X] / ⟨p, g(X)⟩ $$
+$$ ϕ(r + ⟨g(X)⟩) = r + ⟨p, g(X)⟩ $$
+$$ \ker ϕ = ⟨p, g(X)⟩ $$
+
+Then observe
+$$ ϕ(r + ⟨g(X)⟩) = 0 ⇔ r ∈ ⟨p, g(X)⟩ ⇔ r + ⟨g(X)⟩ ∈ ⟨p, g(X)⟩ $$
+
+By first iso theorem with the homomorphism $ϕ$, we see that
+$$ (ℤ[X] / ⟨g(X)⟩) / ⟨p, g(X)⟩ ≌ ℤ[X] / ⟨p, g(X)⟩ $$
+
+Alternatively we can observe that $⟨g(X)⟩ ⊆ ⟨p, g(X)⟩ ⊆ ℤ[X]$, and then
+by the third theorem
+$$ \frac{ ℤ[X] / ⟨g(X)⟩ }{ ⟨p, g(X)⟩ / ⟨g(X)⟩ } ≌ \frac{ ℤ[X] }{ ⟨p, g(X)⟩ } $$
+since $⟨p, g(X)⟩ / ⟨g(X)⟩ = ⟨p, g(X)⟩$.
+
+## Setup
+
+$$ K = ℚ(\sqrt{2}, \sqrt{3}) $$
+$$ γ = \frac{ \sqrt{2} + \sqrt{3} }{ 2 } $$
+$$ g(X) = X^4 - 4X^2 + 1 $$
+$$ p = 5 $$
+\begin{align*}
+\bar{g}(X) &= X^4 + X^2 + 1 \\
+           &= (X^2 + X + 1)(X^2 + 4X + 1)
+\end{align*}
+$$ g_1(X) = (X^2 + X + 1), g_2(X) = X^2 + 4X + 1 $$
+$$ 𝔭_1 = ⟨5, γ^2 + γ + 1⟩, 𝔭_2 = ⟨5, γ^2 + 4γ + 1⟩ $$
+
+## $ℤ_K / 𝔭_1 ≅ 𝔽_p[X] / ⟨\bar{g}_1(X)⟩$ and is a Field
+
+$$ ℤ_K / 𝔭_1 = ℤ[γ] / ⟨5, γ^2 + γ + 1⟩ $$
+
+$$ ϕ : ℤ[γ] → ℤ[X] / ⟨g(X)⟩ $$
+$$ ϕ(a_0 + a_1 γ + a_2 γ^2 + a_3 γ^3) = a_0 + a_1 X + a_2 X^2 + a_3 X^3 + ⟨g(X)⟩ $$
+
+$$ \frac{ ℤ[γ] }{ ⟨p, g_1(γ)⟩ } ≅ \frac{ ℤ[X] / ⟨g(X)⟩ }{ ⟨p, g_1(X), g(X)⟩ / ⟨g(X)⟩ } ≅ \frac{ ℤ[X] }{ ⟨p, g_1(X), g(X)⟩ }$$
+
+But also going in reverse with $ψ : ℤ[X] / ⟨p⟩ → 𝔽_p$
+$$ \frac{ ℤ[X] }{ ⟨p, g_1(X), g(X)⟩ } ≅ \frac{ ℤ[X] / ⟨p⟩ }{ ⟨p, g_1(X), g(X)⟩ / ⟨p⟩ } ≅ \frac{ 𝔽_p[X] }{ ⟨\bar{g}_1(X), \bar{g}(X)⟩ } $$
+Note that $\bar{g}_1(X) | \bar{g}(X)$
+$$ ℤ_K / 𝔭_1 ≅ 𝔽_p[X] / ⟨\bar{g}_1(X)⟩ $$
+
+$\bar{g}_1(X)$ is irreducible $⇒ ⟨\bar{g}_1(X)⟩$ is a prime ideal $⇒$ the right hand side is a field,
+and so $𝔭_1$ is a prime ideal.
+
+## $ℤ_K / ⟨p⟩ ≅ 𝔽_p[X] / ⟨\bar{g}(X)⟩$
+
+\begin{align*}
+ℤ_K / ⟨p⟩   &= ℤ[γ] / ⟨p⟩ \\
+            &≅ \frac{ ℤ[X] / ⟨g(X)⟩ }{ ⟨p, g(X)⟩ / ⟨g(X)⟩ } \\
+            &= \frac{ ℤ[X] }{ ⟨p, g(X)⟩ } \\
+            &≅ \frac{ ℤ[X] / ⟨p⟩ }{ ⟨p, g(X)⟩ / ⟨p⟩ } \\
+\end{align*}
+But let $r ∈ ⟨p, g(X)⟩ / ⟨p⟩ ⊆ ℤ[X] / ⟨p⟩$, then $r = ap + bg(X) ∈ ⟨p, g(X)⟩ + ⟨p⟩ = ⟨p, g(X)⟩$
+
+\begin{align*}
+\frac{ ℤ[X] / ⟨p⟩ }{ ⟨p, g(X)⟩ / ⟨p⟩ }
+    &= \frac{ ℤ[X] / ⟨p⟩ }{ ⟨p, g(X)⟩ } \\
+    &≅ \frac{ 𝔽_p[X] }{ ⟨\bar{g}(X)⟩ } \\
+    &≅ ℤ_K / ⟨p⟩
+\end{align*}
+
+## Deconstructing $pℤ_K$
+
+There is a map $ℤ_K → ℤ_K / ⟨p⟩$ with kernel $⟨p⟩$.
+
+Then for each component of the decomposed $ℤ_K / ⟨p⟩$, there is another map
+$ℤ_K / ⟨p⟩ → ℤ_K / 𝔭_1 ≅ 𝔽_p[X] / ⟨\bar{g}_1(X)⟩$ by $γ → X \mod ⟨p, g_1(X)⟩$.
+So the kernel is $⟨p, g_1(γ)⟩$.
+$$ pℤ_K = 𝔭_1^{e_1} ⋯ 𝔭_r^{e_r} $$
+
