@@ -334,6 +334,34 @@ is a homomorphism. So
 $$ \left| \frac{ ℤ_K/𝔞𝔭 }{ 𝔞/𝔞𝔭 } \right| = \left| \frac{ ℤ_K/𝔞𝔭 }{ ℤ_K/𝔭 } \right| = | ℤ_K/𝔞 | $$
 $$ ⇒ N(𝔞𝔟) = |ℤ_K/𝔞𝔭| = |ℤ_K/𝔞|·|ℤ_K/𝔭| = N(𝔞) N(𝔟) $$
 
+# Dimension, Ramification Index and Inertia Degree
+
+$ℤ_K$ is $n = [K:ℚ]$ dimension vector space. See section 3.4.
+$$ |ℤ_K / ⟨p⟩| = p^n $$
+By CRT $ℤ_K / ⟨p⟩ ≅ ℤ_K / 𝔭_1^{e_1} × ℤ_K / 𝔭_r^{e_r}$.
+$$ |ℤ_K/𝔭_i^{e_i}| = N(p_i)^{e_i} = [ℤ_K/𝔭_i : 𝔽_p]^{e_i} = (p^{f_i})^{e_i} $$
+
+$$ n = e_1 f_1 + ⋯ + e_r f_r $$
+
+```python
+sage: K.<a> = NumberField(x^4 - 4*x^2 + 1)
+sage: O = K.ring_of_integers()
+sage: I = O.ideal(5)
+sage: A, B = O.ideal(a^3 - 5*a + 1), O.ideal(a^3 - 5*a - 1)
+sage: I
+Fractional ideal (5)
+sage: A*B
+Fractional ideal (5)
+sage: A.ramification_index(), B.ramification_index()
+(1, 1)
+sage: I.norm()
+625
+sage: A.norm(), B.norm()
+(25, 25)
+sage: A.norm() * B.norm()
+625
+```
+
 # Deconstructing Primes into Ideals (prop 5.42)
 
 ## Double Quotienting Ideals Isomorphic to Sum of Ideals
