@@ -41,65 +41,65 @@ Proof:
 
 # Fractional Ideals
 
-## There are prime ideals $𝔭_1, …, 𝔭_r$ such that $𝔭_1 ⋯ 𝔭_r ⊆ 𝖆$ (lemma 5.24)
+## There are prime ideals $𝔭_1, …, 𝔭_r$ such that $𝔭_1 ⋯ 𝔭_r ⊆ 𝔞$ (lemma 5.24)
 
-$𝖆$ is a non-zero ideal of $ℤ_K$.
+$𝔞$ is a non-zero ideal of $ℤ_K$.
 
 $ℤ_K$ is Noetherian.
-Since $𝖆$ forms an ascending chain
-$𝖆 ⊆ 𝖆_1 ⊆ 𝖆_2 ⊆ ⋯$,
+Since $𝔞$ forms an ascending chain
+$𝔞 ⊆ 𝔞_1 ⊆ 𝔞_2 ⊆ ⋯$,
 it eventually terminates.
 
-There are no prime ideals $𝔭_1 ⋯ 𝔭_r ⊆ 𝖆$.
-The same is true for all ideals in the chain $𝖆_i$.
+There are no prime ideals $𝔭_1 ⋯ 𝔭_r ⊆ 𝔞$.
+The same is true for all ideals in the chain $𝔞_i$.
 
-Lets take $𝖆$ to be the largest ideal in the chain.
+Lets take $𝔞$ to be the largest ideal in the chain.
 
-$𝖆$ is not prime otherwise $𝔭_1 = 𝖆 ⊆ 𝖆$
+$𝔞$ is not prime otherwise $𝔭_1 = 𝔞 ⊆ 𝔞$
 and the proof is finished.
 
-So there are ideals $𝖆_1, 𝖆_2$ in $ℤ_K$ such that
-$𝖆_1 𝖆_2 ⊆ 𝖆,
-𝖆_1 ∉ 𝖆,
-𝖆_2 ∉ 𝖆$
+So there are ideals $𝔞_1, 𝔞_2$ in $ℤ_K$ such that
+$𝔞_1 𝔞_2 ⊆ 𝔞,
+𝔞_1 ∉ 𝔞,
+𝔞_2 ∉ 𝔞$
 Write
-$$𝔟_1 = 𝖆 + 𝖆_1,
-𝔟_2 = 𝖆 + 𝖆_2$$
+$$𝔟_1 = 𝔞 + 𝔞_1,
+𝔟_2 = 𝔞 + 𝔞_2$$
 Then we can see that
-$$𝔟_1 𝔟_2 = (𝖆 + 𝖆_1)(𝖆 + 𝖆_2)
-= 𝖆 + 𝖆_1 𝖆 + 𝖆_2 𝖆 + 𝖆_1 𝖆_2$$
-Since $𝖆_1 𝖆_2 ⊆ 𝖆$, so
-$𝔟_1 𝔟_2 ⊆ 𝖆$.
+$$𝔟_1 𝔟_2 = (𝔞 + 𝔞_1)(𝔞 + 𝔞_2)
+= 𝔞 + 𝔞_1 𝔞 + 𝔞_2 𝔞 + 𝔞_1 𝔞_2$$
+Since $𝔞_1 𝔞_2 ⊆ 𝔞$, so
+$𝔟_1 𝔟_2 ⊆ 𝔞$.
 But also observe that
-$$𝖆 ⊊ 𝔟_1, 𝖆 ⊊ 𝔟_2$$
+$$𝔞 ⊊ 𝔟_1, 𝔞 ⊊ 𝔟_2$$
 
-Since $𝔟_1, 𝔟_2$ are bigger than $𝖆$, then by $𝖆$'s maximality,
+Since $𝔟_1, 𝔟_2$ are bigger than $𝔞$, then by $𝔞$'s maximality,
 there exist prime ideals $𝔭_i$ such that
 $$𝔭_1 ⋯ 𝔭_s ⊆ 𝔟_1$$
 $$𝔭_{s+1} ⋯ 𝔭_t ⊆ 𝔟_2$$
 $$⇒ 𝔭_1 ⋯ 𝔭_t ⊆ 𝔟_1 𝔟_2
-⊆ 𝖆$$
+⊆ 𝔞$$
 Which is a contradiction.
 
 ## $\mathfrak{a ⊆ b ⇒ b^{-1} ⊆ a^{-1}}$
 
 Let $β ∈ 𝔟^{-1}$
 $$β 𝔟 ⊆ ℤ_K$$
-but $𝖆 ⊆ 𝔟 ⇒ β 𝖆 ⊆ ℤ_K$ and so
-$$β ∈ 𝖆^{-1}$$
+but $𝔞 ⊆ 𝔟 ⇒ β 𝔞 ⊆ ℤ_K$ and so
+$$β ∈ 𝔞^{-1}$$
 
-## $𝖆^{-1} = \{ α ∈ K : α 𝖆 ⊆ ℤ_K \}$ is a fractional ideal (lemma 5.25)
+## $𝔞^{-1} = \{ α ∈ K : α 𝔞 ⊆ ℤ_K \}$ is a fractional ideal (lemma 5.25)
 
-$$𝖆^{-1} = \{ α ∈ K : α 𝖆 ⊆ ℤ_K \}$$
-Let $γ ∈ 𝖆$ and $𝔠 = γ 𝖆^{-1}$.
+$$𝔞^{-1} = \{ α ∈ K : α 𝔞 ⊆ ℤ_K \}$$
+Let $γ ∈ 𝔞$ and $𝔠 = γ 𝔞^{-1}$.
 Take $i, i' ∈ 𝔠$, then $i = γ β, i' = γ β'$ with
-$β, β' ∈ 𝖆^{-1}$.
-$$(β + β') 𝖆 = β 𝖆 + β' 𝖆 ⊆ (ℤ_K + ℤ_K) = ℤ_K$$
+$β, β' ∈ 𝔞^{-1}$.
+$$(β + β') 𝔞 = β 𝔞 + β' 𝔞 ⊆ (ℤ_K + ℤ_K) = ℤ_K$$
 
-Let $i = γ β ∈ 𝔠$ with $γ ∈ 𝖆, β ∈ 𝖆^{-1}$ and $r ∈ ℤ_K$.
+Let $i = γ β ∈ 𝔠$ with $γ ∈ 𝔞, β ∈ 𝔞^{-1}$ and $r ∈ ℤ_K$.
 We want to show that $ri ∈ 𝔠$.
 
-But note that $r ∈ 𝖆^{-1}$, so $r β ∈ 𝖆^{-1} ⇒ ri = γ (r β) ∈ 𝔠$.
+But note that $r ∈ 𝔞^{-1}$, so $r β ∈ 𝔞^{-1} ⇒ ri = γ (r β) ∈ 𝔠$.
 
 ```python
 sage: K.<a> = NumberField(x^2 + 5)
@@ -119,15 +119,15 @@ sage: factor(I)
 (Fractional ideal (2, a + 1)) * (Fractional ideal (3, a + 1))
 ```
 
-## $𝖆$ is a proper ideal of $ℤ_K ⇒ ℤ_K ⊊ 𝖆^{-1}$ (lemma 5.26)
+## $𝔞$ is a proper ideal of $ℤ_K ⇒ ℤ_K ⊊ 𝔞^{-1}$ (lemma 5.26)
 
-### $𝖆 ⊆ 𝔟 ⇒ 𝔟^{-1} ⊆ 𝖆^{-1}$
+### $𝔞 ⊆ 𝔟 ⇒ 𝔟^{-1} ⊆ 𝔞^{-1}$
 
 Let $β ∈ 𝔟^{-1}$, then $β 𝔟 ⊆ ℤ_K$.
 
-But $𝖆 ⊆ 𝔟 ⇒ β 𝖆 ⊆ ℤ_K$
+But $𝔞 ⊆ 𝔟 ⇒ β 𝔞 ⊆ ℤ_K$
 
-So $β ∈ 𝖆^{-1}$.
+So $β ∈ 𝔞^{-1}$.
 
 Section 4.6 shows $⟨1 - \sqrt{-5}⟩$ is not prime.
 
@@ -222,40 +222,40 @@ $$⇒ α^{-1} β ∉ ℤ_K$$
 $𝔭^{-1}$ strictly contains $ℤ_K$, so there is a non-integer element $θ ∈ 𝔭^{-1}$,
 and $𝔭θ ⊈ 𝔭$. But $𝔭$ is maximal, so $𝔭𝔭^{-1} = ℤ_K$.
 
-## $𝖆$ is any ideal $⇒ 𝖆𝖆^{-1} = ℤ_K$ (lemma 5.29)
+## $𝔞$ is any ideal $⇒ 𝔞𝔞^{-1} = ℤ_K$ (lemma 5.29)
 
-By the prev lemma, max ideals $𝔭𝔭^{-1} = ℤ_K$. So $𝖆$ is not maximal.
+By the prev lemma, max ideals $𝔭𝔭^{-1} = ℤ_K$. So $𝔞$ is not maximal.
 
 ### Derive identity
 
-$𝖆𝔭^{-1}$ is an ideal.
-$$𝖆 ⊆ 𝖆𝔭^{-1}$$
-but $∃θ ∈ 𝔭^{-1} : θ ∉ ℤ_K$ so $𝖆 ⊊ 𝖆𝔭^{-1}$.
+$𝔞𝔭^{-1}$ is an ideal.
+$$𝔞 ⊆ 𝔞𝔭^{-1}$$
+but $∃θ ∈ 𝔭^{-1} : θ ∉ ℤ_K$ so $𝔞 ⊊ 𝔞𝔭^{-1}$.
 
-Since $𝖆𝔭^{-1}$ is an ideal, and $𝖆$ is the biggest such that
-$𝖆𝖆^{-1} = ℤ_K$ then
-$$𝖆𝔭^{-1}(𝖆𝔭^{-1}) = ℤ_K$$
+Since $𝔞𝔭^{-1}$ is an ideal, and $𝔞$ is the biggest such that
+$𝔞𝔞^{-1} = ℤ_K$ then
+$$𝔞𝔭^{-1}(𝔞𝔭^{-1}) = ℤ_K$$
 
 ### Prove final statement
 
-$$𝖆𝔭^{-1}(𝖆𝔭^{-1}) = ℤ_K$$
-$$[𝔭^{-1}(𝖆𝔭^{-1})] · 𝖆 = ℤ_K$$
-$$ ⇒ 𝔭^{-1}(𝖆𝔭^{-1}) ⊆ 𝖆^{-1}$$
+$$𝔞𝔭^{-1}(𝔞𝔭^{-1}) = ℤ_K$$
+$$[𝔭^{-1}(𝔞𝔭^{-1})] · 𝔞 = ℤ_K$$
+$$ ⇒ 𝔭^{-1}(𝔞𝔭^{-1}) ⊆ 𝔞^{-1}$$
 by the definition of a fractional ideal.
-$$ ⇒ 𝖆𝔭^{-1}(𝖆𝔭^{-1}) ⊆ 𝖆𝖆^{-1}$$
+$$ ⇒ 𝔞𝔭^{-1}(𝔞𝔭^{-1}) ⊆ 𝔞𝔞^{-1}$$
 
-## Every ideal $𝖆 ≠ 0$ is a product of prime ideals (lemma 5.31)
+## Every ideal $𝔞 ≠ 0$ is a product of prime ideals (lemma 5.31)
 
 Every maximal ideal is prime.
 
-Let $𝖆$ be the biggest ideal not a product of primes.
+Let $𝔞$ be the biggest ideal not a product of primes.
 Then it is contained in $𝔭$ prime and so we can write.
-$$   𝖆 𝔭^{-1} =   𝔭_1 ⋯ 𝔭_r $$
-$$ ⇒ 𝖆        = 𝔭 𝔭_1 ⋯ 𝔭_r $$
+$$   𝔞 𝔭^{-1} =   𝔭_1 ⋯ 𝔭_r $$
+$$ ⇒ 𝔞        = 𝔭 𝔭_1 ⋯ 𝔭_r $$
 
 # Norms of Ideals
 
-## $N_{K/ℚ}(⟨α⟩) = |N_{K/ℚ}(α)|$
+## $N_{K/ℚ}(⟨α⟩) = |N_{K/ℚ}(α)|$ (lemma 5.35)
 
 ### Index calculated from determinant
 
@@ -306,7 +306,35 @@ $$
 The definition of norm from 3.2, is given as the determinant of
 that transform matrix.
 
-# Deconstructing Primes into Ideals
+# $N(𝔞𝔟) = N(𝔞) N(𝔟)$ (theorem 5.37)
+
+Let $𝔭$ be a non-zero prime ideal of $ℤ_K$.
+
+## $ℤ_K / 𝔭 ≅ 𝔞 / 𝔞𝔭$ (lemma 5.36)
+
+There is no ideal $𝔟$ between $𝔞𝔭 ⊊ 𝔟 ⊊ 𝔞$.
+To see this simply multiply through by $𝔞^{-1}$, and note $𝔭$ is maximal.
+So either $𝔟 = 𝔞$ or $𝔞𝔭$.
+
+Choose $α ∈ 𝔞$ with $α ∉ 𝔞𝔭$. Then because of above $⟨α, 𝔞𝔭⟩ = 𝔞$.
+$$ ϕ : ℤ_K → 𝔞/𝔞𝔭 $$
+$$ ϕ(x) = αx + 𝔞𝔭 $$
+is surjective. The kernel is $⟨𝔭⟩$ since $α⟨𝔭⟩ = 𝔞𝔭$.
+
+The book has a typo on the last line of the proof.
+It should be $ℤ_K / 𝔭 ≅ 𝔞 / 𝔞𝔭$.
+
+## Result
+
+Factorise $𝔟$ into prime ideals and so we just deal with $𝔟 = 𝔭$.
+
+$$ ϕ : ℤ_K/𝔞𝔭  →  ℤ_K/𝔞  $$
+$$ ϕ(α + 𝔞𝔭)   = α + 𝔞   $$
+is a homomorphism. So
+$$ \left| \frac{ ℤ_K/𝔞𝔭 }{ 𝔞/𝔞𝔭 } \right| = \left| \frac{ ℤ_K/𝔞𝔭 }{ ℤ_K/𝔭 } \right| = | ℤ_K/𝔞 | $$
+$$ ⇒ N(𝔞𝔟) = |ℤ_K/𝔞𝔭| = |ℤ_K/𝔞|·|ℤ_K/𝔭| = N(𝔞) N(𝔟) $$
+
+# Deconstructing Primes into Ideals (prop 5.42)
 
 ## Double Quotienting Ideals Isomorphic to Sum of Ideals
 
