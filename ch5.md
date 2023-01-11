@@ -344,12 +344,18 @@ $$ |ℤ_K/𝔭_i^{e_i}| = N(p_i)^{e_i} = [ℤ_K/𝔭_i : 𝔽_p]^{e_i} = (p^{f_i
 $$ n = e_1 f_1 + ⋯ + e_r f_r $$
 
 ```python
+sage: # See chapter 3.6.1
+sage: y = ( (sqrt(2) + sqrt(6))/2 )
+sage: minpoly(y)
+x^4 - 4*x^2 + 1
 sage: K.<a> = NumberField(x^4 - 4*x^2 + 1)
 sage: O = K.ring_of_integers()
 sage: I = O.ideal(5)
-sage: A, B = O.ideal(a^3 - 5*a + 1), O.ideal(a^3 - 5*a - 1)
 sage: I
 Fractional ideal (5)
+sage: factor(I)
+(Fractional ideal (a^3 - 5*a + 1)) * (Fractional ideal (a^3 - 5*a - 1))
+sage: A, B = O.ideal(a^3 - 5*a + 1), O.ideal(a^3 - 5*a - 1)
 sage: A*B
 Fractional ideal (5)
 sage: A.ramification_index(), B.ramification_index()
@@ -360,6 +366,8 @@ sage: A.norm(), B.norm()
 (25, 25)
 sage: A.norm() * B.norm()
 625
+sage: ( ( y^3 - 5*y + 1 )*( y^3 - 5*y - 1) ).expand()
+5
 ```
 
 # Deconstructing Primes into Ideals (prop 5.42)
@@ -388,7 +396,7 @@ since $⟨p, g(X)⟩ / ⟨g(X)⟩ = ⟨p, g(X)⟩$.
 ## Setup
 
 $$ K = ℚ(\sqrt{2}, \sqrt{3}) $$
-$$ γ = \frac{ \sqrt{2} + \sqrt{3} }{ 2 } $$
+$$ γ = \frac{ \sqrt{2} + \sqrt{6} }{ 2 } $$
 $$ g(X) = X^4 - 4X^2 + 1 $$
 $$ p = 5 $$
 \begin{align*}
