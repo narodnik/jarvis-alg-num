@@ -34,6 +34,7 @@ bound for $b_i$, so $ℤ_K/𝔭$ is finite.
 ## $K$ is a number field. Every non-zero prime ideal $𝔭 ⊆ ℤ_K$ is maximal (proposition 5.21)
 
 Proof:
+
 * Prime ideal $𝔭 ⇒ ℤ_K/𝔭$ is an integral domain.
 * $ℤ_K/𝔭$ is finite (lemma 5.20).
 * Finite integral domain is a field.
