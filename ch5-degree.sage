@@ -62,13 +62,16 @@ print("Start:")
 print(A)
 print()
 
+# We can play sudoku but lets solve it algorithmically.
+
+# Swap rows/cols until top left is nonzero.
+# Then start with 2x2 square, eliminate nondiagonals
+# We proceed inductively, using rows/cols to eliminate rows/cols on n + 1
+
+# n = 2
+
 A = add_row_multiple(A, 1, 5, 0)
 print("A[1] += 5 A[0]")
-print(A)
-print()
-
-A = add_row_multiple(A, 1, 1, 2)
-print("A[1] += A[2]")
 print(A)
 print()
 
@@ -77,8 +80,43 @@ print("A[:][1] += A[:][0]")
 print(A)
 print()
 
-B, A = add_col_multiple(A, 1, 1, 2, B)
-print("A[:][1] += A[:][2]")
+# n = 3
+
+# Cannot eliminate 4 with 1 so swap the rows
+A = swap_row(A, 1, 2)
+print("swap_row(A[1], A[2])")
+print(A)
+print()
+
+A = add_row_multiple(A, 2, 4, 1)
+print("A[2] += 4 A[1]")
+print(A)
+print()
+
+B, A = add_col_multiple(A, 2, 1, 1, B)
+print("A[:][2] += A[:][1]")
+print(A)
+print()
+
+# n = 4
+
+A = add_row_multiple(A, 3, -1, 0)
+print("A[3] -= A[0]")
+print(A)
+print()
+
+A = add_row_multiple(A, 3, 1, 1)
+print("A[3] += A[1]")
+print(A)
+print()
+
+B, A = add_col_multiple(A, 3, -1, 0, B)
+print("A[:][3] -= A[:][0]")
+print(A)
+print()
+
+B, A = add_col_multiple(A, 3, -5, 1, B)
+print("A[:][3] -= 5 A[:][1]")
 print(A)
 print()
 
@@ -87,18 +125,5 @@ print("A[:][3] += 5 A[:][2]")
 print(A)
 print()
 
-A = add_row_multiple(A, 3, 1, 2)
-print("A[3] += A[2]")
-print(A)
-print()
-
-B, A = add_col_multiple(A, 3, -1, 0, B)
-print("A[:][3] -= 3 A[:][0]")
-print(A)
-print()
-
-A = add_row_multiple(A, 3, -1, 0)
-print("A[3] -= A[0]")
-print(A)
-print()
+# Done!
 
