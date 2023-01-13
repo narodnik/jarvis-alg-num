@@ -370,6 +370,147 @@ sage: ( ( y^3 - 5*y + 1 )*( y^3 - 5*y - 1) ).expand()
 5
 ```
 
+## Find Change of Basis Matrix
+
+The ideal $⟨γ^3 - 5γ + 1⟩$ consists of elements $a + bγ + cγ^2 + dγ^3 ∈ ℤ_K$
+multiplied by $γ^3 - 5γ + 1$.
+
+$$ ℤ_K = ℤ[γ], \qquad γ = \frac{\sqrt{2} + \sqrt{6}}{2}, \qquad α = \sqrt{6} - 1 $$
+$$ ℤ_K = ℤ + ℤγ + ℤy^2 + ℤy^3 $$
+$$ ⟨α⟩ = ℤα + ℤαγ + ℤαγ^2 + ℤαγ^3 $$
+$$ \sqrt{2} = γ^3 - 3γ, \qquad \sqrt{3} = γ^2 - 2 $$
+$$ α = -γ^3 + 5γ - 1 $$
+Elements in $⟨α⟩$ are of the form
+$$ (a + bγ + cγ^2 + dγ^3)(-γ^3 + 5γ - 1) $$
+$$ \textrm{minpoly}(γ) = γ^4 - 4γ^2 + 1 $$
+$$ \implies γ^4 = 4γ^2 - 1 $$
+
+```python
+sage: var("a b c d y")
+(a, b, c, d, y)
+sage: Y = (sqrt(2) + sqrt(6))/2
+sage: y4 = 4*y^2 - 1
+sage: (y4.subs({y: Y}) - Y^4).expand()
+0
+sage: e = ( (a + b*y + c*y^2 + d*y^3)*(-y^3 + 5*y - 1) ).expand(); e
+-d*y^6 - c*y^5 - b*y^4 + 5*d*y^4 - a*y^3 + 5*c*y^3 - d*y^3 + 5*b*y^2 - c*y^2 + 5*a*y - b*y - a
+sage: e = e.subs({y^4: y4}).expand(); e
+-d*y^6 - c*y^5 - a*y^3 + 5*c*y^3 - d*y^3 + b*y^2 - c*y^2 + 20*d*y^2 + 5*a*y - b*y - a + b - 5*d
+sage: e = e.subs({y^5: y*y4}).expand(); e
+-d*y^6 - a*y^3 + c*y^3 - d*y^3 + b*y^2 - c*y^2 + 20*d*y^2 + 5*a*y - b*y + c*y - a + b - 5*d
+sage: e = e.subs({y^6: y^2*y4}).expand(); e
+-4*d*y^4 - a*y^3 + c*y^3 - d*y^3 + b*y^2 - c*y^2 + 21*d*y^2 + 5*a*y - b*y + c*y - a + b - 5*d
+sage: e = e.subs({y^4: y4}).expand(); e
+-a*y^3 + c*y^3 - d*y^3 + b*y^2 - c*y^2 + 5*d*y^2 + 5*a*y - b*y + c*y - a + b - d
+sage: e.collect(y)
+-(a - c + d)*y^3 + (b - c + 5*d)*y^2 + (5*a - b + c)*y - a + b - d
+```
+
+$$
+\begin{pmatrix}
+    - a + b - d \\
+    5a - b + c \\
+    b - c + 5d \\
+    -a + c - d
+\end{pmatrix}
+=
+\begin{pmatrix}
+    -1 &  1 &  0 & -1 \\
+     5 & -1 &  1 &  0 \\
+     0 &  1 & -1 &  5 \\
+    -1 &  0 &  1 & -1 \\
+\end{pmatrix}
+\begin{pmatrix}
+    a \\
+    b \\
+    c \\
+    d \\
+\end{pmatrix}
+$$
+
+```python
+sage: A = matrix([
+....:     [-1, 1, 0, -1],
+....:     [5, -1, 1, 0],
+....:     [0, 1, -1, 5],
+....:     [-1, 0, 1, -1]
+....: ])
+sage: A.determinant()
+25
+```
+
+## Calculate Index From Basis Transformation Matrix
+
+We can perform 2 operations on this change of basis matrix which keep it valid.
+See Alaca 9.1.2.
+
+Let $G = \{ x_1 ω_1 + x_2 ω_2 + x_3 ω_3 + x_4 ω_4 : x_i ∈ ℤ \}$
+with a subgroup $H$ defined by a basis
+$$η_i = c_{i,1} ω_1 + c_{i,2} ω_2 + c_{i, 3} ω_3 + c_{i, 4} ω_4$$
+We can add and subtract these basis from each other leaving the subgroup $H$ intact.
+Observe that
+$$\{ η_1, η_2, η_3, η_4 \} \textrm{ and } \{ η_1, η_2 + k η_3, η_3, η_4 \}$$
+both generate the same group.
+
+There is a slightly more difficult column operation.
+We simplify notation below.
+Assume we are swapping columns 2 and 3 of the 2nd row.
+
+\begin{align*}
+η_2 &= c_1 ω_1 + c_2 ω_2 + c_3 ω_3 + c_4 ω_4 \\
+    &= (c_1 ω_1 + c_4 ω_4) + c_2 ω_2 + c_3 ω_3 \\
+    &= (c_1 ω_1 + c_4 ω_4) + (c_2 + c_3) ω_2 + c_3 (ω_3 - ω_2) \\
+    &= c_1 ω_1 + \bar{c}_2 ω_2 + c_3 \bar{ω}_3 + c_4 ω_4
+\end{align*}
+where
+$$ \bar{c}_2 = c_2 + c_3, \qquad \bar{ω}_3 = ω_3 - ω_2 $$
+Which will leave also $G$ unchanged. Now we end up with
+$$ G = ⟨\bar{ω}_1, \bar{ω}_2, \bar{ω}_3, \bar{ω}_4⟩ $$
+$$ H = ⟨d_1 \bar{ω}_1, d_2 \bar{ω}_2, d_3 \bar{ω}_3, d_4 \bar{ω}_4⟩ $$
+See the script ch5-degree.sage where we use this method to compute the degree.
+
+## Using Ring Isomorphisms
+
+$$
+σ_1 : \begin{cases}
+        \sqrt{2} &\mapsto \sqrt{2} \\
+        \sqrt{3} &\mapsto \sqrt{3} \\
+        \sqrt{6} &\mapsto \sqrt{6} \\
+      \end{cases}
+\qquad
+σ_2 : \begin{cases}
+        \sqrt{2} &\mapsto -\sqrt{2} \\
+        \sqrt{3} &\mapsto \sqrt{3} \\
+        \sqrt{6} &\mapsto -\sqrt{6} \\
+      \end{cases}
+\qquad
+σ_3 : \begin{cases}
+        \sqrt{2} &\mapsto \sqrt{2} \\
+        \sqrt{3} &\mapsto -\sqrt{3} \\
+        \sqrt{6} &\mapsto -\sqrt{6} \\
+      \end{cases}
+\qquad
+σ_4 : \begin{cases}
+        \sqrt{2} &\mapsto -\sqrt{2} \\
+        \sqrt{3} &\mapsto -\sqrt{3} \\
+        \sqrt{6} &\mapsto \sqrt{6} \\
+      \end{cases}
+$$
+\begin{align*}
+N(\sqrt{6} - 1) &= σ_1(\sqrt{6} - 1) σ_2(\sqrt{6} - 1) σ_3(\sqrt{6} - 1) σ_4(\sqrt{6} - 1) \\
+                &= (\sqrt{6} - 1) (-\sqrt{6} - 1) (-\sqrt{6} - 1) (\sqrt{6} - 1) \\
+                &= 25
+\end{align*}
+
+```python
+sage: R.<x> = PolynomialRing(ZZ, 1)
+sage: I = Ideal([x^4 - 4*x^2 + 1, x^3 - 5*x + 1])
+sage: I.groebner_basis()
+[x^2 + 4*x + 1, 5]
+```
+
+Which isomorphic to $𝔽_{5^2}$.
+
 # Deconstructing Primes into Ideals (prop 5.42)
 
 ## Double Quotienting Ideals Isomorphic to Sum of Ideals
