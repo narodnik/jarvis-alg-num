@@ -513,6 +513,33 @@ Which isomorphic to $𝔽_{5^2}$.
 
 # Deconstructing Primes into Ideals (prop 5.42)
 
+## Short Explanation
+
+$$ ℤ_K / ⟨p⟩ ≅ 𝔽_p[γ] ≅ 𝔽_p[X] / ⟨\bar{g}(X)⟩ $$
+By CRT
+$$ 𝔽_p[X] / ⟨\bar{g}(X)⟩ ≅ 𝔽_p[X] / ⟨\bar{g}_1(X)^{e_1}⟩ × ⋯ × 𝔽_p[X] / ⟨\bar{g}_r(X)^{e_r}⟩ $$
+The map $ℤ_K → 𝔽_p[X] / ⟨\bar{g}_1(X)^{e_1}⟩ × ⋯ × 𝔽_p[X] / ⟨\bar{g}_r(X)^{e_r}⟩$ has kernel
+$$ ⟨p, g_1(γ)^{e_1}⟩ ∩ ⋯ ∩ ⟨p, g_r(γ)^{e_r}⟩ $$
+$𝔭_i^{e_i} ⊆ ⟨p, g_i(γ)^{e_i}⟩$ because
+$$ 𝔭_i^{e_i} = ⟨p^{e_i}, p^{e_i - 1} g_i(γ), … , p g_i(γ)^{e_i - 1}, g_i(γ)^{e_i}⟩ $$
+Finally
+$$ ⟨p⟩ = ⟨p, g_1(γ)^{e_1}⟩ ∩ ⋯ ∩ ⟨p, g_r(γ)^{e_r}⟩ $$
+$$ ⇒ 𝔭_1^{e_1} ⋯ 𝔭_r^{e_r} ⊆ ⟨p⟩ $$
+Taking norms, we see that $n = e_1 f_1 + ⋯ + e_r f_r$, so the inclusion is actually an equality.
+
+## Example
+
+$$ K = ℚ(\sqrt{2}, \sqrt{3}) $$
+$$ γ = \frac{ \sqrt{2} + \sqrt{6} }{ 2 } $$
+$$ g(X) = X^4 - 4X^2 + 1 $$
+$$ p = 5 $$
+\begin{align*}
+\bar{g}(X) &= X^4 + X^2 + 1 \\
+           &= (X^2 + X + 1)(X^2 + 4X + 1)
+\end{align*}
+$$ g_1(X) = (X^2 + X + 1), g_2(X) = X^2 + 4X + 1 $$
+$$ 𝔭_1 = ⟨5, γ^2 + γ + 1⟩, 𝔭_2 = ⟨5, γ^2 + 4γ + 1⟩ $$
+
 ## Double Quotienting Ideals Isomorphic to Sum of Ideals
 
 Observe the lattice when we collapse normal subgroups down to 0.
@@ -533,19 +560,6 @@ Alternatively we can observe that $⟨g(X)⟩ ⊆ ⟨p, g(X)⟩ ⊆ ℤ[X]$, and
 by the third theorem
 $$ \frac{ ℤ[X] / ⟨g(X)⟩ }{ ⟨p, g(X)⟩ / ⟨g(X)⟩ } ≌ \frac{ ℤ[X] }{ ⟨p, g(X)⟩ } $$
 since $⟨p, g(X)⟩ / ⟨g(X)⟩ = ⟨p, g(X)⟩$.
-
-## Setup
-
-$$ K = ℚ(\sqrt{2}, \sqrt{3}) $$
-$$ γ = \frac{ \sqrt{2} + \sqrt{6} }{ 2 } $$
-$$ g(X) = X^4 - 4X^2 + 1 $$
-$$ p = 5 $$
-\begin{align*}
-\bar{g}(X) &= X^4 + X^2 + 1 \\
-           &= (X^2 + X + 1)(X^2 + 4X + 1)
-\end{align*}
-$$ g_1(X) = (X^2 + X + 1), g_2(X) = X^2 + 4X + 1 $$
-$$ 𝔭_1 = ⟨5, γ^2 + γ + 1⟩, 𝔭_2 = ⟨5, γ^2 + 4γ + 1⟩ $$
 
 ## $ℤ_K / 𝔭_1 ≅ 𝔽_p[X] / ⟨\bar{g}_1(X)⟩$ and is a Field
 
