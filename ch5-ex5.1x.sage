@@ -93,11 +93,14 @@ for i in range(20):
 
     assert D_K == K.discriminant()
 
+    O = K.ring_of_integers()
+
     print(f"γ^2 - {d} = 0")
     print("K = ℚ(γ)")
     print(f"γ1 = {γ1}, y2 = {γ2}")
     print(f"D_K = {D_K} or {K.discriminant()}")
     for p, _ in factor(int(D_K)):
         print(f"⟨{p}⟩ ℤ_K =", " ".join(find_prime_ideals(f, p)))
+        print("        =", factor(O.ideal(p)))
     print()
 
