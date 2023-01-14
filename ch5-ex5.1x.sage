@@ -47,6 +47,6 @@ D_K = (γ1 - γ2)^2
 assert D_K == K.discriminant()
 print("K = ℚ( √(-2) )")
 print(f"D_K = {D_K}")
-print("⟨2⟩ K =", " ".join(find_prime_ideals(x^2 + 2, 2)))
+print("⟨2⟩ ℤ_K =", " ".join(find_prime_ideals(x^2 + 2, 2)))
 print()
 
