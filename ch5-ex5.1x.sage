@@ -12,7 +12,8 @@ def find_prime_ideals(g_X, p):
     K.<γ> = F.quo(g_X)
 
     ideals = []
-    if len(factor(g_X)) == 1:
+    factors = factor(g_X)
+    if len(factors) == 1 and factors[0][1] == 1:
         return [f"⟨{p}⟩"]
     for g_X, ramification in factor(g_X):
         g_γ = g_X(γ)
