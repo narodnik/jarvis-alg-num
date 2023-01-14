@@ -60,14 +60,21 @@ def is_reducible(f):
     assert ramified_factors > 0
     return ramified_factors > 1
 
-for i in range(4):
+for i in range(20):
     # Now create a random quadratic field
     # Polynomial must be irreducible
     while True:
-        A, B = [ZZ.random_element(0, 20) for _ in range(2)]
-        f = x^2 + A*x + B
+        factors = set()
+        for j in range(ZZ.random_element(1, 5)):
+            factors.add(random_prime(20))
+        d = reduce(lambda f1, f2: f1*f2, factors)
+        print(f"d =", " ".join(str(f) for f in factors))
+        print(f"  = {d}")
+
+        # f must be square free
+        f = x^2 - d
         if is_reducible(f):
-            # Try again since this poly is not irreducible
+            # Try again since this poly is reducible
             continue
 
         K.<a> = NumberField(f)
@@ -75,10 +82,20 @@ for i in range(4):
 
     # Δ = (γ1 - γ2)^2 (γ1 - γ3)^2 (γ2 - γ3)^2
     γ1, γ2 = [sol.rhs() for sol in f.solve(x)]
-    D_K = (γ1 - γ2)^2
-    #assert D_K == K.discriminant()
-    print(f"γ^2 + {A} γ + {B} = 0")
+
+    # See example 3.30
+    # D_K is the discriminant of the integral basis
+    if d % 4 == 1:
+        D_K = d
+    else:
+        assert d % 4 in (2, 3)
+        D_K = 4*d
+
+    assert D_K == K.discriminant()
+
+    print(f"γ^2 - {d} = 0")
     print("K = ℚ(γ)")
+    print(f"γ1 = {γ1}, y2 = {γ2}")
     print(f"D_K = {D_K} or {K.discriminant()}")
     for p, _ in factor(int(D_K)):
         print(f"⟨{p}⟩ ℤ_K =", " ".join(find_prime_ideals(f, p)))
