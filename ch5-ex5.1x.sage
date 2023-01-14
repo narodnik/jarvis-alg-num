@@ -51,3 +51,36 @@ print(f"D_K = {D_K}")
 print("⟨2⟩ ℤ_K =", " ".join(find_prime_ideals(x^2 + 2, 2)))
 print()
 
+print("-------------------")
+
+def is_reducible(f):
+    R.<X> = ZZ[]
+    f = fieldify(R, f)
+    ramified_factors = sum(n for _, n in factor(f))
+    assert ramified_factors > 0
+    return ramified_factors > 1
+
+for i in range(4):
+    # Now create a random quadratic field
+    # Polynomial must be irreducible
+    while True:
+        A, B = [ZZ.random_element(0, 20) for _ in range(2)]
+        f = x^2 + A*x + B
+        if is_reducible(f):
+            # Try again since this poly is not irreducible
+            continue
+
+        K.<a> = NumberField(f)
+        break
+
+    # Δ = (γ1 - γ2)^2 (γ1 - γ3)^2 (γ2 - γ3)^2
+    γ1, γ2 = [sol.rhs() for sol in f.solve(x)]
+    D_K = (γ1 - γ2)^2
+    #assert D_K == K.discriminant()
+    print(f"γ^2 + {A} γ + {B} = 0")
+    print("K = ℚ(γ)")
+    print(f"D_K = {D_K} or {K.discriminant()}")
+    for p, _ in factor(int(D_K)):
+        print(f"⟨{p}⟩ ℤ_K =", " ".join(find_prime_ideals(f, p)))
+    print()
+
