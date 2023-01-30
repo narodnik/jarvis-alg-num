@@ -59,3 +59,87 @@ $u = 2, -2, 3, -3$.
 
 Now let $α = \frac{1 + \sqrt{d}}{2}$, but $u \nmid α$ and $u \nmid α ± 1$.
 So $u$ does not exist.
+
+# Quadratic Forms
+
+Positive definite forms $f(x, y) ≥ 0$ and
+$f(x, y) = 0 ⇒ (x, y) = (0, 0)$.
+
+Therefore $a, c > 0$ since $f(x, 0), f(0, y) > 0$.
+Complete the square to see $b² - 4ac < 0$.
+$$ ax² + bxy + cy² = a\left(x + \frac{b}{2a} y\right)² + \left(c - \frac{b²}{4a}\right) y² $$
+
+A form is normal if $-a < b ≤ a$.
+
+A form is reduced if it is normal and $a < c$ or $a = c$ and $b ≥ 0$.
+
+Generators for $\textrm{SL}₂(ℤ)$
+$$
+T =
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+\qquad \textrm{and} \qquad
+S = \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}
+$$
+Which correspond to
+$$ (a, b + 2a, c + b + a) \qquad \textrm{and} \qquad (c, -b, a) $$
+
+# Minimum Values
+
+$(x, y)$ are coprime.
+
+$$ |x| ≥ 2 ⇒ f(x, y) > c $$
+$$ |y| ≥ 2 ⇒ f(x, y) > c $$
+
+| $x$ | $y$ | $f(x, y)$ |
+|-----|-----|-----------|
+| -1  | -1  | $> c$     |
+| -1  | 0   | $a$       |
+| -1  | 1   | $≥ c$     |
+| 0   | -1  | $c$       |
+| 0   | 1   | $c$       |
+| 1   | -1  | $≥ c$     |
+| 1   | 0   | $a$       |
+| 1   | 1   | $> c$     |
+
+When $a = c$, there are 4 pairs $f(x, y) = a$,
+which becomes 6 when $a = b = c$.
+
+## $|y| = 1, |x| ≥ 2$
+
+Complete the square
+\begin{align*}
+4a f(x, y) &= 4a(ax² + bxy + cy²) \\
+           &= (2ax + by)² - (b² - 4ac) y² \\
+           &= (2ax + by)² - (b² - 4ac)
+\end{align*}
+But note that
+$$ |2ax + by| ≥ |2ax| - |by| ≥ 4a - |b| ≥ 3a $$
+since $|y| = 1$ and $b ≤ a$.
+$$ ⇒ 4a f(x, y) ≥ 9a² - (b² - 4ac) = 4ac + 8a² + (a² - b²) $$
+but $|b| ≤ a$ so $4a f(x, y) ≥ 4ac$ or
+$$ f(x, y) ≥ c $$
+
+## $|y| ≥ 2$
+
+$$ 4a f(x, y) = (2ax + by)² - (b² - 4ac) y² ≥ -(b² - 4ac) y² $$
+$$ y² ≥ 4 $$
+$$ ⇒ 4a f(x, y) ≥ -4(b² - 4ac) = 16ac - 4b² $$
+Note $b² - 4ac < 0$ and we can factor that out.
+$$ 4a f(x, y) ≥ 12ac + 4(ac - b²) ≥ 12ac ≥ 4ac $$
+$$ f(x, y) > c $$
+
+## Remaining Cases
+
+$(x, y) = 1$ and if $y = 0$, then $x = ±1$ so
+$$ f(±1, 0) = a $$
+
+$$ f(0, ±1) = c $$
+$$ f(±1, ±1) = a + b + c > c $$
+$$ f(±1, ∓1) = a - b + c ≥ c $$
+
