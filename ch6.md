@@ -143,7 +143,7 @@ $$ f(0, ±1) = c $$
 $$ f(±1, ±1) = a + b + c > c $$
 $$ f(±1, ∓1) = a - b + c ≥ c $$
 
-# Decompose $M \in \textrm{SL}_2{ℤ}$
+# Decompose $M \in \textrm{SL}₂(ℤ)$
 
 $$
 M =
