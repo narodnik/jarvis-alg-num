@@ -155,9 +155,9 @@ $$
 
 Use $S$ to make $a, c$ positive.
 
-Then use $T⁻¹$ to reduce $a$ so $|a| < c$.
-
-Then flip them with $S⁻¹$.
+Then use $T⁻¹$ to reduce $a$ so $a < 0$ and $-a < c$.
+Then flip them with $S$. This reduces $c$.
+Repeat this process.
 
 The final matrix is $\begin{pmatrix}
     1 & s \\
