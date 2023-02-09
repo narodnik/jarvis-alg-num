@@ -89,7 +89,11 @@ while not stopped:
                     if not operations:
                         operations.append(["S", 1])
                     elif operations[-1][0] == "S":
-                        operations[-1][1] += 1
+                        # S⁴ = I
+                        if operations[-1][1] == 3:
+                            operations.pop()
+                        else:
+                            operations[-1][1] += 1
                     elif operations[-1][0] == "S⁻¹":
                         if operations[-1][1] == 1:
                             operations.pop()
@@ -261,6 +265,9 @@ while not stopped:
     form_eval = f"({eval_a}, {eval_b}, {eval_c})"
     text = font.render(form_eval, True, (255, 255, 255))
     screen.blit(text, (w - text.get_rect().w - 100, 380))
+    b2_4ac = eval_b**2 - 4*eval_a*eval_c
+    text = font.render(f"b² - 4ac = {b2_4ac}", True, (255, 255, 255))
+    screen.blit(text, (w - text.get_rect().w - 100, 460))
 
     pygame.display.flip()
     time.sleep(0.1)

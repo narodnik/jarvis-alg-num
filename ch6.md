@@ -143,3 +143,24 @@ $$ f(0, ±1) = c $$
 $$ f(±1, ±1) = a + b + c > c $$
 $$ f(±1, ∓1) = a - b + c ≥ c $$
 
+# Decompose $M \in \textrm{SL}_2{ℤ}$
+
+$$
+M =
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+$$
+
+Use $S$ to make $a, c$ positive.
+
+Then use $T⁻¹$ to reduce $a$ so $|a| < c$.
+
+Then flip them with $S⁻¹$.
+
+The final matrix is $\begin{pmatrix}
+    1 & s \\
+    0 & 1
+\end{pmatrix}$ which is some power of $T$.
+We now have a decomposition for $M$ by inverting the chain of operations.
