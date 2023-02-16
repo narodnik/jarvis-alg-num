@@ -164,3 +164,77 @@ The final matrix is $\begin{pmatrix}
     0 & 1
 \end{pmatrix}$ which is some power of $T$.
 We now have a decomposition for $M$ by inverting the chain of operations.
+
+# Every positive definite form is properly equivalent to a reduced form (theorem 6.14)
+
+We already saw above that the smallest possible value for a reduced form is
+$f(x, y) = a$.
+
+## Algorithm
+
+```python
+if a > c or (a = c and b < 0):
+    (a, b, c) → (c, -b, a)                  #1
+# Remaining two cases
+elif a < c:
+    if b <= -a:
+        (a, b, c) → (a, b + 2a, c + b + a)  #2
+    else:
+        assert b > a
+        (a, b, c) → (a, b - 2a, c - b + a)  #3
+elif a = c and b >= 0:
+    assert b > a
+    (a, b, c) → (a, b - 2a, c - b + a)      #4
+```
+
+First observe that in all the steps, $a$ does not increase.
+Eventually it must become constant.
+
+In the remaining two cases, the absolute value of $|b|$ gets smaller.
+We will show that for each case.
+
+### Branch 2: $b ≤ -a$
+
+First assume $b = -a ⇒ |b| = a$, then we see that
+$(a', b', c') = (a, a, c)$ and $b' = |b|$.
+Now $a = b < c$ so the form is reduced.
+
+Now assume $b < -a ⇒ a + b < 0 ⇒ 2a + b < a$.
+But since $a > 0 ⇒ -a < 0$, we see
+$b < -a < 0$.
+
+If $2a + b > 0$ then
+$|2a + b| = |b'| < a$. But $b < -a ⇒ a < |b| ⇒ |b'| < |b|$.
+
+Else $b' = 2a + b < 0$, then
+$a > 0, b < 0 ⇒ 2a + b > b$ so $|b'|$ also is smaller.
+
+### Branch 3: $b > a$
+
+$b > a$ and $a > 0 ⇒ 0 < a < b$.
+$$ b - 2a < b $$
+
+If $b - 2a ≥ 0$ then $|b - 2a| < |b|$ and we are done.
+
+So now $b - 2a < 0$. Also $b > a ⇒ b - a > 0$.
+We want to disprove $|b - 2a| ≥ |b|$.
+
+First assume $|b - 2a| = |b|$, then $b > 0 ⇒ b - 2a = -b ⇒ a = 0$
+which is impossible so $|b - 2a| > |b| = b$.
+$$ ⇒ b - 2a < -b $$
+$$ 2b - 2a < 0 $$
+$$ b < a $$
+which is a contradiction.
+
+### Branch 4
+
+The proof is essentially the same as branch 3, since $b > a$ and the transform
+is the same.
+
+## Determinant is Fixed
+
+We can easily show algebraically the determinant is unchanged when applying any transform.
+So $b'^2 - 4a'c' = b² - 4ac$.
+
+When $a = b$, then $c$ is also fixed.
+
