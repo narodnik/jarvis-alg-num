@@ -238,3 +238,99 @@ So $b'^2 - 4a'c' = b² - 4ac$.
 
 When $a = b$, then $c$ is also fixed.
 
+# $𝔞 = aℤ + (b + cω)ℤ$ with $c|a$ and $c|b$
+
+## $𝔞 = ⟨a, b + cω⟩$
+
+Let $m + nω ∈ 𝔞$
+
+There is an $s$ such that
+$$ n = sc + r \textrm{ with } r < c \textrm{ or } r = 0 $$
+but $c$ is minimal so $r = 0$ and
+$$ (m + nω) - s(b + cω) = m - sb $$
+$b$ is chosen to be non-negative.
+
+Now we have
+$$ (m - sb) = ta + r_a $$
+but $a$ is minimal so $r_a = 0$
+$$ (m - sb) = (m + nω) - s(b + cω) $$
+$$ ⇒ m + nω = s(b + cω) + ta $$
+$$ m + nω ∈ aℤ + (b + cω)ℤ $$
+
+## $c|a$
+
+Since $c$ is minimal, we can use the same remainder trick to
+prove $c|a$ and $c|b$
+$$ a ∈ 𝔞 ⇒ aω ∈ 𝔞 $$
+$a = tc + r ⇒ aω - t(b + cω) = -tb + rω$ with $r < c$, but
+$c$ is minimal so $r = 0$ and $a = tc$.
+
+## $c|b$
+
+Likewise
+$$ b + cω ∈ 𝔞 ⇒ bω + cd ∈ 𝔞 $$
+again $b = tc + r$ so $(cd + bω) = t(b + cω) + ((-tb + cd) + rω) ⇒ r = 0$.
+
+## $N_{K/ℚ}(𝔞) = ac$
+
+$$ M = [a, b + cω], \qquad S = \{ r + sω : 0 ≤ r < a, 0 ≤ s < c \} $$
+We prove $x + yω ∈ ℤ_K$ is congruent mod $M$ to an element of $S$.
+
+Let $y = cq + s$ where $q ∈ ℤ$ and $0 ≤ s < c$ then
+$$ (x + yω) - q(b + cω) = x' + sω $$
+$$ ⇒ x + yω ≡ x' + sω \mod M $$
+Now write $x' = aq' + r$ where $q' ∈ ℤ$ and $0 ≤ r < a$ then
+$$ x' + sω ≡ r + sω \mod M $$
+$$ N_{K/ℚ}(𝔞) = \# S = ac $$
+
+# Equivalence of Forms within Same Class
+$$
+F_{α, β} =
+\begin{pmatrix}
+α \\
+β
+\end{pmatrix}, \qquad
+F_{γ, δ} =
+\begin{pmatrix}
+γ \\
+δ
+\end{pmatrix}, \qquad
+$$
+$$ F_{α, β} = M F_{γ, δ} $$
+$$ ⇒ \mathbf{v}^T F_{α, β} = \mathbf{v}^T M F_{γ, δ} $$
+and also that
+$$ \mathbf{v}^T F_{\bar{α}, \bar{β}} = \mathbf{v}^T M F_{\bar{γ}, \bar{δ}} $$
+
+Also note that
+$$ \mathbf{v}^T F = F^T \mathbf{v} \tag{1}$$
+
+\begin{align*}
+N_{K/ℚ}(𝔞) · f_{α, β}(\mathbf{v}) &= N_{K/ℚ}(𝔞) · f_{α, β}(x, y) = N_{K/ℚ}(αx + βy) \\
+    &= (αx + βy)(\bar{α}x + \bar{β}y) \\
+    &= \mathbf{v}^T F_{α, β} \mathbf{v}^T F_{\bar{α}, \bar{β}} \\
+    &= \mathbf{v}^T F_{α, β} F_{\bar{α}, \bar{β}}^T \mathbf{v} \qquad \text{by 1} \\
+    &= \mathbf{v}^T M F_{γ, δ} (M F_{\bar{γ}, \bar{δ}})^T \mathbf{v} \\
+    &= \mathbf{v}^T M F \bar{F}^T M^T \mathbf{v} \\
+    &= (\mathbf{v}^T M) F (\mathbf{v}^T M) \bar{F} \\
+    &= N_{K/ℚ}(γ(px + qy) + δ(rx + sy)) \\
+    &= N_{K/ℚ}(𝔞) · f_{γ, δ}(px + qy, rx + sy)
+\end{align*}
+
+```python
+sage: var("p r q s x y a b g d")
+(p, r, q, s, x, y, a, b, g, d)
+sage: v = matrix([[x], [y]])
+sage: M = matrix([[p, r], [q, s]])
+sage: vTM = v.transpose() * M
+sage: vTM
+[p*x + q*y r*x + s*y]
+sage: F = matrix([[g], [d]])
+sage: var("gb db")
+(gb, db)
+sage: Fb = matrix([[gb], [db]])
+sage: vTM*F*vTM*Fb
+[((r*x + s*y)*d + (p*x + q*y)*g)*(r*x + s*y)*db + ((r*x + s*y)*d + (p*x + q*y)*g)*(p*x + q*y)*gb]
+sage: vTM*F*vTM*Fb == (g*(p*x + q*y) + d*(r*x + s*y))*(gb*(p*x + q*y) + db*(r*x + s*y))
+True
+```
+
