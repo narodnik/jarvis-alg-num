@@ -25,37 +25,48 @@ def reduce(f):
 assert is_reduced((1, 0, 13))
 assert not is_reduced((1, 2, 14))
 
-d = -13
-if d % 4 in (2, 3):
-    D = 4*d
-else:
-    D = d
+def class_number(d):
+    if d % 4 in (2, 3):
+        D = 4*d
+    else:
+        D = d
 
-reduced_forms = set()
+    reduced_forms = set()
 
-for ac in range(-D/4, round(-D/3 + 1)):
-    # b² - 4ac = D
-    b2 = D + 4*ac
-    if not b2.is_square():
-        continue
-    b = sqrt(b2)
-    # 0 < a ≤ c
-    print(ac)
-    for a in range(1, ac):
-        c = ac/a
-        if a > c:
-            break
-        if not c in ZZ:
+    for ac in range(ceil(-D/4), floor(-D/3 + 1)):
+        # b² - 4ac = D
+        b2 = D + 4*ac
+        if not b2.is_square():
             continue
-        c = int(c)
+        b = sqrt(b2)
+        # 0 < a ≤ c
+        print(ac)
+        for a in range(1, ac):
+            c = ac/a
+            if a > c:
+                break
+            if not c in ZZ:
+                continue
+            c = int(c)
 
-        f = reduce((a, b, c))
-        reduced_forms.add(f)
-        print(f"  {f}")
+            f = reduce((a, b, c))
+            reduced_forms.add(f)
+            print(f"  {f}")
 
-        f = reduce((a, -b, c))
-        reduced_forms.add(f)
-        print(f"  {f}")
+            f = reduce((a, -b, c))
+            reduced_forms.add(f)
+            print(f"  {f}")
 
-print()
-print(f"Class number = {len(reduced_forms)}")
+    print()
+    h = len(reduced_forms)
+    print(f"Class number = {h}")
+    return h
+
+assert class_number(-13) == 2
+assert class_number(-14) == 4
+assert class_number(-19) == 1
+assert class_number(-355) == 4
+assert class_number(-371) == 8
+assert class_number(-395) == 8
+assert class_number(-271) == 11
+
