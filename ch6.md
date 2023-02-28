@@ -283,6 +283,38 @@ Now write $x' = aq' + r$ where $q' ∈ ℤ$ and $0 ≤ r < a$ then
 $$ x' + sω ≡ r + sω \mod M $$
 $$ N_{K/ℚ}(𝔞) = \# S = ac $$
 
+# $ac|c²d - b²$
+
+Let $α ∈ 𝔞$ then $αω ∈ 𝔞$
+\begin{align*}
+α &= ax + (b + cω)y \\
+αω &= cdy + (ax + by)ω \\
+   &= as + (b + cω)t \quad \text{for some } s, t ∈ ℤ
+\end{align*}
+Comparing coefficients
+\begin{align*}
+as + bt &= cdy \\
+ct &= ax + by \tag{1}
+\end{align*}
+$$ t = \frac{ax + by}{c} ∈ ℤ ⇔ c|a \text{ and } c|b $$
+to see this choose $x, y = 0, 1$ or $1, 0$.
+
+Combining (1) with $t$, and setting $x = 0$, we get that
+$ac|c²d - b²$.
+
+# $Φ$
+
+$$ Φ = \frac{N_{K/ℚ}(ax + (b + cω)y)}{N_{K/ℚ}(𝔞)} $$
+
+$$ N_{K/ℚ}(ax + by + cωy) = (ax + by)² - dc²y² $$
+This is positive and so is $N_{K/ℚ}(𝔞)$, so $Φ(𝔞)$ is positive definite.
+
+Let $α = a, β = b + cω$
+\begin{align*}
+N_{K/ℚ}(αx + βy) &= (αx + βy)(\bar{α}x + \bar{β}y) \\
+    &= N_{K/ℚ}(α)x² + T_{K/ℚ}(α\bar{β})xy + N_{K/ℚ}(β)y²
+\end{align*}
+
 # Equivalence of Forms within Same Class
 $$
 F_{α, β} =
@@ -334,3 +366,21 @@ sage: vTM*F*vTM*Fb == (g*(p*x + q*y) + d*(r*x + s*y))*(gb*(p*x + q*y) + db*(r*x 
 True
 ```
 
+# $𝔞$ and $𝔟$ in the Same Ideal Class $⇒ Φ(𝔞) = Φ(𝔟)$ (Proposition 6.27)
+
+*$𝔞 \sim 𝔟 ⇒ \frac{𝔞}{𝔟} = ⟨θ⟩$ since the class group is defined modulo principal ideals.*
+
+*There exists $θ ∈ K$ such that $𝔟 = ⟨θ⟩𝔞$. Write $θ = A/B$ for $A, B ∈ ℤ_K$.*
+
+When $d < 0$ then $N_{K/ℚ}(γ) = |N_{K/ℚ}(γ)|$.
+We will prove $Φ(μ𝔞) = Φ(𝔞)$.
+Note $𝔞 = ℤα + ℤβ$.
+\begin{align*}
+f_{α, β} &= \frac{ N_{K/ℚ}(αx + βy) }{ N_{K/ℚ}(𝔞) } \\
+f_{μα, μβ} &= \frac{ N_{K/ℚ}(μαx + μβy) }{ N_{K/ℚ}(μ𝔞) } \\
+           &= \frac{ N_{K/ℚ}(μ) N_{K/ℚ}(αx + βy) }{ N_{K/ℚ}(⟨μ⟩) N_{K/ℚ}(𝔞) } \\
+           &= \frac{ N_{K/ℚ}(μ) N_{K/ℚ}(αx + βy) }{ |N_{K/ℚ}(μ)| N_{K/ℚ}(𝔞) } \\
+           &= \frac{ N_{K/ℚ}(αx + βy) }{ N_{K/ℚ}(𝔞) } \\
+           &= f_{α, β} \\
+\end{align*}
+Since $𝔟 = \frac{A}{B}𝔞 ⇒ B𝔟 = A𝔞$, then $Φ(𝔞) = Φ(A𝔞) = Φ(B𝔟) = Φ(𝔟)$.
