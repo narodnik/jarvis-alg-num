@@ -30,6 +30,7 @@ def class_number(d):
         D = 4*d
     else:
         D = d
+    print(f"d = {d}, D = {D}")
 
     reduced_forms = set()
 
@@ -40,7 +41,7 @@ def class_number(d):
             continue
         b = sqrt(b2)
         # 0 < a ≤ c
-        print(ac)
+        print(f"  ac = {ac}")
         for a in range(1, ac):
             c = ac/a
             if a > c:
@@ -51,17 +52,18 @@ def class_number(d):
 
             f = reduce((a, b, c))
             reduced_forms.add(f)
-            print(f"  {f}")
+            print(f"    {f}")
 
             f = reduce((a, -b, c))
             reduced_forms.add(f)
-            print(f"  {f}")
+            print(f"    {f}")
 
-    print()
     h = len(reduced_forms)
     print(f"Class number = {h}")
+    print()
     return h
 
+assert class_number(-5) == 2
 assert class_number(-13) == 2
 assert class_number(-14) == 4
 assert class_number(-19) == 1
