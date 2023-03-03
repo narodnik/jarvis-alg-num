@@ -238,6 +238,48 @@ So $b'^2 - 4a'c' = b² - 4ac$.
 
 When $a = b$, then $c$ is also fixed.
 
+# Description of Stages
+
+1. Ordered bases of ideals:
+    1. Show every ideal in $ℤ_K$ is written
+       $𝔞 = aℤ + (b + cω)ℤ$.
+       Do this by taking $α = a ∈ 𝔞$ to be minimal, and
+       $b + cω ∈ 𝔞$ with $c$ minimal.
+       Then reducing an element $m + nω ∈ 𝔞$, we see
+       $(m + nω) - s(b + cω) - ta = 0$.
+    2. $c|a$ follows from $a ∈ 𝔞 ⇒ aω ∈ 𝔞$ and
+       $aω - t(b + cω)$ with $r = a - tc$ where $r < c$ or $r = 0$.
+       But $c$ is minimal so $r = 0 ⇒ c|a$.
+    3. $c|b$ follows similarly from $(b + cω)ω ∈ 𝔞$.
+    4. Dimensionality of cosets is therefore $ac$.
+    5. $ac|c²d - b²$ for $d ≡ 2,3$ mod 4 else $ac|c²\left(\frac{d - 1}{4}\right) - b² - bc$.
+       when $d ≡ 1$ mod 4.
+       We can see this by taking $α = ax + (b + cω)y ∈ 𝔞$ and expanding $αω$.
+       We also know $αω = as + (b + cω)t$ for some $s, t$, and comparing across
+       the basis $\{1, ω\}$, we get 2 linear equations.
+       Then we solve for $s$ substituting $t$ and we get the desired result.
+    6. We can plainly see $N_{K/ℚ}(ax + (b + cω)y) = N_{K/ℚ}(𝔞) f_{α, β}(x, y)$.
+    7. $f_{α, β}$ is positive definite since $N_{K/ℚ}(αx + βy)$ and $N_{K/ℚ}(𝔞)$ are
+       always positive. We can see the first relation from
+       $N_{K/ℚ}(αx + βy) = N_{K/ℚ}(ax + by + c\sqrt{d}y) = (ax + by)² - dc²y²$
+       which is positive since $-d > 0$.
+       For the $d ≡ 1$ mod 4 case, we have
+       $N_{K/ℚ}(αx + βy) = (ax + by)² + c²\left(\frac{1 - d}{4}\right)$.
+2. Effect of changing ordered generators:
+    1. Ordered generator means $β / α$ lies in the upper-half of the complex plane.
+    2. We see that $M ∈ \textrm{SL}₂(ℤ)$ acting on $(α, β)$ preserves ordering.
+    3. We can use any ordered basis and they will map to the same class.
+3. From ideal classes to proper equivalence classes of quadratic forms:
+    1. Two ideals $𝔞$ and $𝔟$ are equivalent if $𝔞 - 𝔟 = ⟨θ⟩$ for some principal ideal.
+       Let $θ = A/B$, then $B𝔟 = A𝔞$.
+    2. We show $Φ(A𝔞) = Φ(𝔞)$ which by the same argument implies $Φ(B𝔟) = Φ(𝔟)$.
+    3. Which means $Φ(𝔞) = Φ(𝔟)$.
+4. And back again
+    1. We show $Ψ(f)$ is an ideal.
+    2. We also show applying the transforms to $f$ keeps it within the same
+       equivalence classes.
+    3. Lastly $[Φ(Ψ(f))] = [f]$, and $[Ψ(Φ(𝔞))] = [𝔞]$.
+
 # $𝔞 = aℤ + (b + cω)ℤ$ with $c|a$ and $c|b$
 
 ## $𝔞 = ⟨a, b + cω⟩$
@@ -387,7 +429,11 @@ Since $𝔟 = \frac{A}{B}𝔞 ⇒ B𝔟 = A𝔞$, then $Φ(𝔞) = Φ(A𝔞) = �
 
 # $d ≡ 1$ (mod 4)
 
-## $𝔞 = aℤ + (b + cρ)ℤ$ with $c|a$ and $c|b$
+Only the first and last stages are changed.
+
+## Stage 1
+
+### $𝔞 = aℤ + (b + cρ)ℤ$ with $c|a$ and $c|b$
 
 Same proof as before. Take $a$ and $b + cρ$ where $a, c$ are minimal and positive.
 Then subtract $m + nρ$ to show there is an integer remainder.
@@ -402,7 +448,7 @@ $$ b\bar{ρ} + c\left(\frac{d - 1}{4}\right) = bρ - b + c\left(\frac{d - 1}{4}\
 Subtracting a multiple of $b + cρ$, we see the coefficient for $ρ$
 is $r = b - tc$ with $r = 0$ or $r < c$ but $c$ is minimal so $c | b$.
 
-## $ac|c²\left(\frac{d - 1}{4}\right) - b² - bc$
+### $ac|c²\left(\frac{d - 1}{4}\right) - b² - bc$
 
 \begin{align*}
 α\bar{ρ} &= ax\bar{ρ} + by\bar{ρ} + cy\left(\frac{d - 1}{4}\right) \\
@@ -420,4 +466,87 @@ acs &= -acx -bcy + c²y\left(\frac{d - 1}{4}\right) - b(ax + by) \\
 \end{align*}
 and since $c|b ⇒ ac|ab$
 $$ ac|(-bc + c²\left(\frac{d - 1}{4}\right) - b²) $$
+
+### $Φ(𝔞)$
+
+The conjugate of $ρ^* = \frac{1 - \sqrt{d}}{2}$.
+
+\begin{align*}
+N_{K/ℚ}(ax + by + cρy) &= (ax + by + cy · \textrm{re}(ρ))² - (cy · \textrm{im}(ρ))² \\
+                       &= \left(ax + by + cy · \frac{1}{2}\right)²    - \left(cy · \frac{\sqrt{d}}{2}\right)²
+\end{align*}
+
+```python
+sage: R.<x, y> = SR[]
+sage: var("a b c d")
+(a, b, c, d)
+sage: f = (a*x + b*y + c*(1/2)*y)^2 - c^2*(d/4)*y^2
+sage: f
+a^2*x^2 + (a*(2*b + c))*x*y + (-1/4*c^2*d + 1/4*(2*b + c)^2)*y^2
+sage: f.coefficients()
+[a^2, a*(2*b + c), -1/4*c^2*d + 1/4*(2*b + c)^2]
+```
+
+Then extracting the common factor $N_{K/ℚ}(𝔞) = ac$ gives a form with integer coefficients
+by the results above.
+
+Discriminant is also the same.
+`f =` $N_{K/ℚ}(αx + βy)$ and `f2 =` $Φ(𝔞) = N_{K/Q}(αx + βy)/N_{K/ℚ}(𝔞)$.
+```python
+sage: f
+a^2*x^2 + (a*(2*b + c))*x*y + (-1/4*c^2*d + 1/4*(2*b + c)^2)*y^2
+sage: f2 = f/(a*c)
+sage: A, B, C = f2.coefficients()
+# Discriminant is unchanged
+sage: (B^2 - 4*A*C).expand()
+d
+```
+
+## Stage 4
+
+### $Φ(Ψ((a, b, c))) = (a, b, c)$
+
+$$ Ψ((a, b, c)) = ℤa + ℤ\left(\frac{b + \sqrt{d}}{2}\right) $$
+$$ A = a, \qquad B = \frac{b - 1}{2}, \qquad C = 1 $$
+$$ ⇒ N_{K/ℚ}(𝔞) = AC = a $$
+$$ α = a, \qquad β = \frac{b - 1}{2} + ρ = \frac{b + \sqrt{d}}{2} $$
+$$ \frac{N_{K/ℚ}(αx + βy)}{N_{K/ℚ}(𝔞)} = \frac{1}{a}\left((ax + \frac{b}{2} y)² - \frac{d}{4} y² \right) $$
+
+```python
+sage: N = (a*x + (b/2)*y)^2 - (d/4)*y^2
+sage: N
+a^2*x^2 + a*b*x*y + (1/4*b^2 - 1/4*d)*y^2
+sage: N/a
+a*x^2 + b*x*y + (1/4*(b^2 - d)/a)*y^2
+```
+But note $d = b² - 4ac$ so
+```python
+sage: a*x^2 + b*x*y + (1/4*(b^2 - (b^2 - 4*a*c))/a)*y^2
+a*x^2 + b*x*y + c*y^2
+```
+
+### $[Ψ(Φ(𝔞))] = [𝔞]$
+
+\begin{align*}
+Φ(𝔞) &= \frac{N_{K/ℚ}(ax + (b + cρ))}{N_{K/ℚ}(𝔞)} \\
+    &= \frac{1}{ac}\left( (ax + by + c · \textrm{re}(ρ)y)² - (c · \textrm{im}(ρ) y)² \right) \\
+    &= \frac{1}{ac}\left( (ax + by + c · \frac{1}{2} y)² - (c · \frac{d}{2} y)² \right) \\
+\end{align*}
+
+```python
+sage: f = (a*x + b*y + c*(1/2)*y)^2 - (c*(d/2)*y)^2
+sage: f /= (a*c)
+sage: f
+a/c*x^2 + ((2*b + c)/c)*x*y + (-1/4*(c^2*d^2 - (2*b + c)^2)/(a*c))*y^2
+```
+(see also bottom of page 142 for the formula for $Φ(𝔞)$)
+
+\begin{align*}
+Ψ(Φ(𝔞)) &= Ψ\left(\frac{a}{c} x² + \left(\frac{2b}{c} + 1\right) xy
+    + \left(\frac{ b² + bc + c² \frac{1 - d}{4}}{ac}\right) y² \right) \\
+&= ℤ\frac{a}{c} + ℤ\left(\frac{(\frac{2b}{c} + 1) - 1}{2} + ρ \right) \\
+&= ℤ\frac{a}{c} + ℤ\left(\frac{b}{c} + ρ \right) \\
+&= \frac{1}{c} (ℤa + ℤ(b + cρ)) \\
+\end{align*}
+$$⇒ [Ψ(Φ(𝔞))] = [𝔞]$$
 
