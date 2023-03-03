@@ -384,3 +384,40 @@ f_{μα, μβ} &= \frac{ N_{K/ℚ}(μαx + μβy) }{ N_{K/ℚ}(μ𝔞) } \\
            &= f_{α, β} \\
 \end{align*}
 Since $𝔟 = \frac{A}{B}𝔞 ⇒ B𝔟 = A𝔞$, then $Φ(𝔞) = Φ(A𝔞) = Φ(B𝔟) = Φ(𝔟)$.
+
+# $d ≡ 1$ (mod 4)
+
+## $𝔞 = aℤ + (b + cρ)ℤ$ with $c|a$ and $c|b$
+
+Same proof as before. Take $a$ and $b + cρ$ where $a, c$ are minimal and positive.
+Then subtract $m + nρ$ to show there is an integer remainder.
+
+Then $c|a$ because $a ∈ 𝔞 ⇒ aρ ∈ 𝔞$, meaning $aρ - t(b + cρ) ⇒ r = a - tc$ with either
+$r < c$ or $r = 0$. But $c$ is minimal so $r = 0$ proving the statement.
+
+Now we prove $c|b$.
+Note $\bar{ρ} = \frac{\sqrt{d} - 1}{2} = ρ - 1$, and $ρ\bar{ρ} = \frac{d - 1}{4}$.
+Then since $b + cρ ∈ 𝔞$,
+$$ b\bar{ρ} + c\left(\frac{d - 1}{4}\right) = bρ - b + c\left(\frac{d - 1}{4}\right) ∈ 𝔞 $$
+Subtracting a multiple of $b + cρ$, we see the coefficient for $ρ$
+is $r = b - tc$ with $r = 0$ or $r < c$ but $c$ is minimal so $c | b$.
+
+## $ac|c²\left(\frac{d - 1}{4}\right) - b² - bc$
+
+\begin{align*}
+α\bar{ρ} &= ax\bar{ρ} + by\bar{ρ} + cy\left(\frac{d - 1}{4}\right) \\
+ &= (ax + by)ρ + (-ax -by + cy\left(\frac{d - 1}{4}\right)) \qquad \textrm{ since $\bar{ρ} = ρ - 1$} \\
+ &= as + (b + cρ)t
+\end{align*}
+Comparing coefficients for $ρ$ we see
+\begin{align*}
+ct &= ax + by \\
+as + bt &= -ax -by + cy\left(\frac{d - 1}{4}\right) \\
+⇒ as &= -ax -by + cy\left(\frac{d - 1}{4}\right) - bt \\
+    &= -ax -by + cy\left(\frac{d - 1}{4}\right) - bt \\
+    &= -ax -by + cy\left(\frac{d - 1}{4}\right) - b\frac{ax + by}{c} \\
+acs &= -acx -bcy + c²y\left(\frac{d - 1}{4}\right) - b(ax + by) \\
+\end{align*}
+and since $c|b ⇒ ac|ab$
+$$ ac|(-bc + c²\left(\frac{d - 1}{4}\right) - b²) $$
+
