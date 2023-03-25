@@ -86,3 +86,124 @@ is a root of $g(x) ⇒ g(x) = λ_n(x)$.
 $g(x)$ is a generic polynomial dividing $f_n(x)$, so this argument means $λ_n(x)$
 is irreducible, since $g(x)$ must $λ_n(x)$ and there are no smaller divisors.
 
+# Discriminants and Integral Bases
+
+## $pℤ_K = ⟨1 - ζ⟩^{𝜙(pʳ)}$
+
+We can see
+$$ λ_{pʳ}(X) = X^{p^{r - 1} (p - 1)} + X^{p^{r - 1} (p - 2)} + ⋯ + X^{p^{r - 1}} + 1 \tag{1}$$
+Just multiply the denominator out and you can see this holds.
+
+Then the primitive roots are $ζᵍ$ with $g ∈ G = \{ 1 ≤ g ≤ n | \gcd(p, g) = 1 \}$. You can
+see that that any $g^{pⁱ}$ is not primitive hence we exclude those.
+
+$$ λ_{pʳ}(X) = \prod_{g ∈ G} (X - ζᵍ) \tag{2}$$
+
+Put $X = 1$ into (1), and we get $λ_{pʳ}(1) = p$ since there are $p - 1$ terms $+ 1$.
+Then also substituting into (2) shows
+
+$$ p = \prod_{g ∈ G} (1 - ζᵍ) $$
+$$ ⇒ ⟨p⟩ = \prod_{g ∈ G} ⟨1 - ζᵍ⟩ $$
+
+$$ 1 - ζᵍ = (1 - ζ)(1 + ζ + ⋯ + ζ^{g - 1}) $$
+which shows $⟨1 - ζᵍ⟩ ⊆ ⟨1 - ζ⟩$.
+And we can calculate the converse by finding $h : gh ≡ 1 \mod{pʳ}$ since $ζ^{gh} = ζ¹$.
+So both ideals are the same.
+
+Lastly $[ℚ(ζ) : ℚ] = 𝜙(pʳ)$. To see this write $ℚ(ζ)$ in terms of its basis over $ℚ$.
+Then you see the generators are all the primitive elements which is $𝜙(pʳ)$.
+
+## Ring of Integers $ℤ_K = ℤ[ζ]$
+
+$$ Δ\{ω₁, …, ω_n \} ℤ_K ⊆ ℤω₁ + ⋯ + ℤω_n $$
+$$ Δ\{1, ζ, …, ζ^{k - 1}\} = ±pˢ $$
+$$ pˢ ℤ_K ⊆ ℤ[ζ] = ℤ + ℤζ + ⋯ + ℤζ^{k - 1} ⊆ ℤ_K $$
+
+From section 5, we know $pℤ_K = ⟨π⟩ᵏ ⇒ k = [ℚ(ζ) : ℚ]$.
+
+### $ℤ_K = ℤ + πℤ_K$
+
+We know $N_{ℚ(ζ)/ℚ}(π) = p$. By definition $N_{ℚ(ζ)/ℚ}(π) = |ℤ_K / ⟨π⟩|$ which we see is $p$,
+so $|ℤ_K/⟨π⟩| = p$. Now lets consider the cosets
+$$ a + ⟨π⟩, \quad a ∈ ℤ $$
+Now we show correspondence of cosets mod $p$.
+
+Take $a, a' ∈ ℤ$ with $a ≡ a' \mod{p}$, then since $⟨p⟩ ⊂ ⟨π⟩$ we have $a ≡ a' \mod{⟨π⟩}$.
+
+Likewise let $a ≡ a' \mod{⟨π⟩}$, then $a - a' ∈ ⟨π⟩ ⇒ ⟨a - a'⟩ ⊆ ⟨π⟩$, and so
+$⟨a - a'⟩ = ⟨π⟩Q$ for some ideal of $ℤ_K$.
+
+Note that $N(a - a') = (a - a')²$ and $N(a - a') = N_{ℚ(ζ)/ℚ}(⟨a - a'⟩)$ so
+\begin{align*}
+(a - a') &= N_{ℚ(ζ)/ℚ}(⟨a - a'⟩) \\
+    &= N_{ℚ(ζ)/ℚ}(⟨π⟩Q) \\
+    &= N_{ℚ(ζ)/ℚ}(⟨π⟩) N_{ℚ(ζ)/ℚ}(Q) \\
+    &= p N_{ℚ(ζ)/ℚ}(Q) \\
+\end{align*}
+so we see $p | (a - a')²$ and since $p$ is prime $p | (a - a')$ and $a ≡ a' \mod{p}$ so
+$$ a ≡ a' \mod{⟨π⟩} ⇔ a ≡ a' \mod{p} $$
+so we see the cosets $a + ⟨π⟩ : a ∈ \{ 0, …, p - 1 \}$ are distinct and
+$$ ℤ_K / ⟨π⟩ ≅ ℤ / ⟨p⟩ $$
+
+Since the cosets of $ℤ_K$ are $a + ⟨π⟩, a ∈ ℤ$, we see $ℤ_K = ℤ + πℤ_K$.
+
+# Exercises
+
+## 9.2
+
+\begin{align*}
+ζ²ⁿ &= 1 \\
+    &= (ζⁿ)²
+\end{align*}
+so $ζⁿ = ±1$, but $ζ$ is a primitive $2n$ root of unity so $ζⁿ = -1$.
+
+$n$ is odd, so $(-1)ⁿ = -1$
+$$ ⇒ -ζⁿ = 1 \textrm{ or } (-ζ)ⁿ = 1 $$
+so $-ζ$ is a primitive $n$th root of unity.
+
+## 9.3.1
+
+$$ m | n ⇒ m = p₁^{k₁} ⋯ p_r^{k_r}, \; n = m p₁^{l₁} ⋯ p_r^{l_r} q₁^{m₁} ⋯ q_t^{m_t} $$
+$$ mn = m² p₁^{l₁} ⋯ p_r^{l_r} n $$
+$$ \gcd(m² p₁^{l₁} ⋯ p_r^{l_r}, n₁) = 1 $$
+$$ ⇒ 𝜙(mn) = 𝜙(m² p₁^{l₁} ⋯ p_r^{l_r}) 𝜙(n₁) $$
+\begin{align*}
+𝜙(p^{2k + l}) &= p^{2k + l} - p^{2k + l - 1} \\
+    &= p^k (p^{k + l} - p^{k + l - 1})
+\end{align*}
+$$ 𝜙(m² p₁^{l₁} ⋯ p_r^{l_r}) = m 𝜙(m p₁^{l₁} ⋯ p_r^{l_r}) $$
+and so we see
+$$ \deg λ_{mn}(x) = \deg λ_n(x^m) $$
+
+## 9.3.2
+
+Let $y : λ_n(y) = 0$, then $y ≠ 1$.
+For any $a : λ_n(aᵐ) = 0 ⇒ aᵐ ≠ 0$, so $a$ is a primitive root of $λ_{mn}(x)$.
+
+We can divide each poly by $(x - a)$ and since they have the same degree,
+we see $λ_{mn}(x) = λ_n(xᵐ)$.
+
+## 9.3.3
+
+Let $g(x) = x^{p^{1 - r}}$, then we can compose the functions
+$$ (λ_p ∘ g)(x^{p^{r - 1}}) = λ_p(x) $$
+$$ (λ_{pʳ} ∘ g)(x) = λ_{pʳ}(x^{p^{1 - r}}) $$
+So observe $pʳ = p^{1 - r} p^{2r - 1} ⇒ p^{1 - r} | pʳ$.
+
+Let $mn = p$ so that $m = p^{1 - r}, n = pʳ$ then
+$$ λ_p(x) = λ_{p^r}(x^{p^{1 - r}}) $$
+now compose with $g⁻¹$ to get
+$$ λ_{pʳ}(x) = λ_p(x^{p^{r - 1}}) $$
+
+### 9.4
+
+$$ λ_p(x) = \frac{xᵖ - 1}{x - 1} $$
+$$ λ₁(x) = x - 1 $$
+$$ xⁿ - 1 = λ₁(x) λ_p(x) λ_q(x) λ_{pq}(x) $$
+Rearrange this last identity and we get
+\begin{align*}
+λ_q(x) λ_{pq}(x) &= \frac{ xⁿ - 1 }{ λ₁(x) λ_p(x) } \\
+    &= \frac{ (xᵖ)^q - 1 }{ (x - 1) · \frac{ xᵖ - 1 }{ x - 1} } \\
+    &= λ_q(xᵖ)
+\end{align*}
+
