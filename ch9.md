@@ -296,3 +296,13 @@ $$ \leg{q}{p} \leg{p^*}{q} = 1 $$
 $$ ⇒ \frac{1}{\leg{q}{p} \leg{p}{q}} = (-1)^{(p - 1)(q - 1)/4} $$
 whereby the result easily follows.
 
+# Ex 9.8
+
+```python
+sage: K.<z> = CyclotomicField(23)
+sage: z^23
+1
+sage: (1 + z + z^5 + z^6 + z^7 + z^9 + z^11)*(1 + z^2 + z^4 + z^5 + z^6 + z^10 + z^11)
+2*z^17 + 2*z^16 + 2*z^15 + 2*z^13 + 2*z^12 + 6*z^11 + 2*z^10 + 2*z^9 + 2*z^7 + 2*z^6 + 2*z^5
+```
+
