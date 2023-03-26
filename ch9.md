@@ -256,9 +256,43 @@ We therefore see
     &= \leg{1}{p} + ⋯ + \leg{p - 2}{p} + \leg{-1}{p} \\
     &= \sum_{c = 1}^{p - 2} \leg{c}{p} + \leg{-1}{p}
 \end{align*}
-$$ \sum_{c = 1}^{p - 2} \leg{c}{p} = - \leg{-1}{p} $$
+$$ ⇒ \sum_{c = 1}^{p - 2} \leg{c}{p} = - \leg{-1}{p} $$
 
 \begin{align*}
 τ² &= \leg{-1}{p} + (p - 1) \leg{-1}{p} \\
    &= \leg{-1}{p} p \\
 \end{align*}
+
+## Quadratic Reciprocity
+
+Since $q$ is a prime distinct from $p$, both $1$ and $q$ generate the same set additively.
+Therefore we conclude $\{ 1, …, p - 1 \}$ and $\{ q, …, (p - 1)q \}$ are the same sets.
+You can also form the additive group homomorphism $h(a) = qa$ which has kernel $\{ 0 \}$, hence
+is an isomorphism, and a permutation of the set.
+
+So $ℤ_p^* = qℤ_p^*$, and $f(ℤ_p^*) = f(qℤ_p^*)$.
+$$ \sum_{a = 1}^{p - 1} \leg{aq}{p} ζ^{aq} = \sum_{a = 1}^{p - 1} \leg{a}{p} ζᵃ $$
+$$ ⇒ \leg{q}{p} τ(ζ^q) = τ(ζ) \tag{1} $$
+
+We now show $τ(ζ^q) ≡ τ(ζ)^q \mod {q}$. First note that under the frobenius $Φ(x + y) = Φ(x) + Φ(y)$.
+Secondly $\leg{a²}{p} = 1$, so for $q$ odd prime, $\leg{a}{p}^q = \leg{a}{p}$. Then we can apply this
+\begin{align*}
+Φ(τ(ζ)) &≡ Φ\left(\leg{1}{p}\right) Φ(ζ) + ⋯ + Φ\left(\leg{p - 1}{p}\right) Φ(ζᵖ⁻¹) \mod{q} \\
+     &≡ \leg{1}{p} ζ^q + ⋯ + \leg{p - 1}{p} ζᵖ⁻¹ \mod{q} \\
+     &≡ τ(Φ(ζ))
+\end{align*}
+$$ ⇒ τ(ζ^q) ≡ τ(ζ)^q \mod{q} $$
+Then from the previous exercise we saw that $τ(ζ)² = \leg{-1}{p} p$
+\begin{align*}
+τ(ζ)^q &= τ(ζ) τ(ζ)^{q - 1} \\
+    &= τ(ζ) \left(τ(ζ)²\right)^{(q - 1)/2} \\
+    &= τ(ζ) p^{*(q - 1)/2} \\
+    &≡ τ(ζ) \leg{p^*}{q} \mod{q} \qquad \textrm{(by Euler's criterion)}
+\end{align*}
+Substituting (1) into this, we get
+$$ τ(ζ^q) ≡ \leg{q}{p} τ(ζ^q) \leg{p^*}{q} \mod{q} $$
+Since the only values for legendre symbols are $\{ -1, 1 \}$ we conclude
+$$ \leg{q}{p} \leg{p^*}{q} = 1 $$
+$$ ⇒ \frac{1}{\leg{q}{p} \leg{p}{q}} = (-1)^{(p - 1)(q - 1)/4} $$
+whereby the result easily follows.
+
