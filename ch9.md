@@ -1,6 +1,7 @@
 ---
 header-includes: |
     - \newcommand{\leg}[2]{\left( \frac{#1}{#2} \right)}
+    - \newcommand{\√}[1]{\sqrt{#1}}
 ---
 # Polynomial $λ_n(x)$ is irreducible
 
@@ -295,6 +296,70 @@ Since the only values for legendre symbols are $\{ -1, 1 \}$ we conclude
 $$ \leg{q}{p} \leg{p^*}{q} = 1 $$
 $$ ⇒ \frac{1}{\leg{q}{p} \leg{p}{q}} = (-1)^{(p - 1)(q - 1)/4} $$
 whereby the result easily follows.
+
+# Ex 9.7
+
+$$ ρ = \frac{1 + \√{-23}}{2} $$
+$$ ℚ(\√{-23}) $$
+$$ 𝔭 = ⟨2, ρ⟩ $$
+$$ 𝔭³ = ⟨2³, 2²ρ, 2ρ², ρ³⟩ $$
+$$ \textrm{minpoly}(ρ) = X² - X + 6 $$
+$$ d ≡ 1 \mod{4} $$
+\begin{align*}
+ℤ_K &≅ ℤ[X] / ⟨X² - X + 6, 2, X⟩ \\
+    &≅ ℤ[X] / ⟨2, X⟩ \\
+    &≅ 𝔽₂
+\end{align*}
+$$ N_{ℚ(\√{-23})/ℚ}(𝔭) = 2 $$
+$$ (a + b\√{-23})\left(\frac{3 - \√{-23}}{2}\right) = \frac{3a + 23b}{2} + \frac{-a + 3b}{2} $$
+$$ \begin{pmatrix}
+3/2 & 23/2 \\
+-1/2 & 3/2
+\end{pmatrix}
+\begin{pmatrix}
+a \\ b
+\end{pmatrix} =
+\begin{pmatrix}
+c \\ d
+\end{pmatrix}
+$$
+
+```python
+sage: var("x")
+x
+sage: K.<z> = NumberField(x^2 + 23)
+sage: z^2
+-23
+sage: L.<a, b> = K[]
+sage: (a + b*z)*(3 - z)/2
+(-1/2*z + 3/2)*a + (3/2*z + 23/2)*b
+sage: K.<a, b> = QQ[]
+sage: L.<z> = K.extension(x^2 + 23)
+sage: (a + b*z)*(3 - z)/2
+(-1/2*a + 3/2*b)*z + 3/2*a + 23/2*b
+sage: M = matrix([[3/2, 23/2], [-1/2, 3/2]])
+sage: M.determinant()
+8
+sage: M^-1
+[  3/16 -23/16]
+[  1/16   3/16]
+sage: M^-1 * vector([1/2, 1/2])
+(-5/8, 1/8)
+sage: M^-1 * vector([2, 0])
+(3/8, 1/8)
+sage: y = (3 - z)/2
+sage: (-5 + z)*y/8
+1/2*z + 1/2
+sage: (3 + z)*y/8
+2
+```
+
+So we see that
+$$ \left(\frac{-5 + \√{-23}}{8}\right) \left(\frac{3 - \√{-23}}{2}\right) = ρ $$
+$$ \left(\frac{3 + \√{-23}}{8}\right) \left(\frac{3 - \√{-23}}{2}\right) = 2 $$
+
+$$ N\left(\frac{3 - \√{-23}}{2}\right) = 8 $$
+$$ N_{ℚ(\√{-23})/ℚ}(𝔭³) = 8 $$
 
 # Ex 9.8
 
