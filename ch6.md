@@ -1,3 +1,9 @@
+---
+header-includes: |
+    - \newcommand{\leg}[2]{\left( \frac{#1}{#2} \right)}
+    - \newcommand{\√}[1]{\sqrt{#1}}
+---
+
 # Units
 
 ## $d ≡ 2, 3 \mod 4$
@@ -26,11 +32,20 @@ the 6th roots of unity.
 
 Note $\bar{ω} = ω^{n - 1}$ so $N(ω) = ω \bar{ω} = ω^n$.
 
+# Motivation
+
+When we take $α, β ∈ ℚ(\√{d})$, then $α/β$ has a nearest integer $κ$, which can also be written
+$α = κβ + ρ ⇒ ρ = β \left(\frac{α}{β} - κ\right)$.
+
+Since $α = κβ + ρ$ with $N(ρ) < N(β)$, then we see $N\left(\frac{α}{β} - κ\right) < 1$.
+
 # Euclidean Imaginary Quadratic Fields
 
 See `ch6-euclid.py`. With $d = -19$, the top vertex becomes
 $1.14i$.
 $$ N\left(\frac{α}{β} - κ\right) > 1 ⇒ N(ρ) = N(α - κβ) > N(β) $$
+which means it is non-euclidean.
+
 Let $α = 28 \sqrt{d}, β = 108$, then $α/β = 1.13i$. Then we
 can confirm the above is true.
 
